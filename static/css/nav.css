@@ -1,0 +1,38 @@
+.navbar {
+    background-color: rgb(35, 35, 35);
+}
+
+.navbar-brand {
+    color: rgb(238, 238, 238);
+    font-family: 'Metal Mania', cursive;
+    font-size: 35px;
+}
+
+.nav-link {
+    color: rgb(238, 238, 238);
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 20px;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-footer {
+    width: 100%;
+    background-color: rgb(35, 35, 35);
+    color: rgb(238, 238, 238);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.company-name {
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 25px;
+}
