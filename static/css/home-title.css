@@ -1,0 +1,169 @@
+.title-container {
+    background-color: rgb(42, 42, 42);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 5vw)
+    );
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-content {
+    width: 100%;
+    transform: translateY(-5%);
+}
+
+.title-header {
+    font-family: 'Metal Mania', cursive;
+    color: rgb(238, 238, 238);
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+}
+
+.subtitle-header {
+    margin-top: 40px;
+    font-family: 'Averia Serif Libre', cursive;
+    color: rgb(238, 238, 238);
+    text-align: center;
+}
+
+@media only screen and (min-width: 1250px) {
+    .title-header {
+        font-size: 150px;
+    }
+
+    .logo {
+        width: 170px;
+    }
+
+    .subtitle-header {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px) {
+    .title-header {
+        font-size: 220px;
+    }
+
+    .logo {
+        width: 240px;
+    }
+
+    .subtitle-header {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
+    .title-header {
+        font-size: 120px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .subtitle-header {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (min-height: 1020px) {
+    .title-header {
+        font-size: 170px;
+    }
+
+    .logo {
+        width: 190px;
+    }
+
+    .subtitle-header {
+        font-size: 37px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (max-height: 1019px) {
+    .title-header {
+        font-size: 120px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .subtitle-header {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 649px) {
+    .title-header {
+        font-size: 120px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .subtitle-header {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 549px) {
+    .title-header {
+        font-size: 120px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .subtitle-header {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .title-container {
+        height: 85vh;
+    }
+    .title-header {
+        font-size: 100px;
+    }
+
+    .logo {
+        width: 115px;
+    }
+
+    .subtitle-header {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    .title-container {
+        height: 85vh;
+    }
+    
+    .title-header {
+        font-size: 80px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .subtitle-header {
+        font-size: 16px;
+    }
+}

@@ -35,16 +35,18 @@
     padding: 11px 20px;
 }
 
+.company-name {
+    font-family: 'Averia Serif Libre', cursive;
+}
+
 @media only screen and (min-width: 450px) {
     .company-name {
-        font-family: 'Averia Serif Libre', cursive;
         font-size: 25px;
     }
 }
 
 @media only screen and (max-width: 449px) {
     .company-name {
-        font-family: 'Averia Serif Libre', cursive;
         font-size: 15px;
     }
 }
