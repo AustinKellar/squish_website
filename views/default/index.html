@@ -12,13 +12,15 @@
   </div>
 
   <div class="trailer">
-      <h1 class="trailer-header">Gameplay Trailer</h1>
-        <iframe src="{{ = trailer_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+      <div class="trailer-content">
+            <h1 class="trailer-header">Gameplay Trailer</h1>
+            <iframe src="{{ = trailer_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
   </div>
 
   <div class="screenshots-container">
       <div class="screenshots-content">
-        <h1 class="trailer-header">Screenshots</h1>
+        <h1 class="screenshots-header">Screenshots</h1>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 {{ for index, _ in enumerate(screenshots): }}
