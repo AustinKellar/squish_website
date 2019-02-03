@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="{{=URL('static','css/nav.css')}}"/>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="navbar-brand" v-on:click="setRoute('home')">SQUISH</div>
+    <button id="nav-collapse" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <div class="nav-link" v-on:click="setRoute('play')">Play</div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link" v-on:click="setRoute('meet_the_team')">Meet the Team</div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="page-footer">
+    <p class="company-name">&copy; Sit On It Games 2019</p>
+</div>
