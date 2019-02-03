@@ -1,10 +1,28 @@
+var onPageLoad = function() {
+    console.log("here");
+    if (window.location.pathname.toUpperCase() == '/SQUISH/DEFAULT/INDEX') {
+        window.location.pathname = '/Squish';
+    }
+};
+
+var setRoute = function(route) {
+    app.route = route;
+
+    if (route != 'home') {
+        $('#nav-collapse').click();
+    }
+};
+
 var app = new Vue({
     el: '#app',
     delimiters: ['${', '}'],
     unsafeDelimiters: ['!{', '}'],
     data: {
-        test: "This is a test!"
+        route: 'home'
     },
     methods: {
+        setRoute: setRoute
     }
 });
+
+onPageLoad();
