@@ -18,6 +18,10 @@ def index():
 
     return dict(logo=logo, trailer_url=trailer_url, screenshots=screenshots)
 
+@auth.requires(auth.user_id == 1, requires_login=True)
+def edit():
+    return dict()
+
 # ---- API (example) -----
 @auth.requires_login()
 def api_get_user_email():
