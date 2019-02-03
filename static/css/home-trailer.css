@@ -1,4 +1,4 @@
-.trailer {
+.trailer-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@ iframe {
 }
 
 @media only screen and (min-width: 1250px) {
-    .trailer {
+    .trailer-container {
         height: 80vh;
     }
 
@@ -35,7 +35,7 @@ iframe {
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px) {
-    .trailer {
+    .trailer-container {
         height: 60vh;
     }
 
@@ -50,7 +50,7 @@ iframe {
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
-    .trailer {
+    .trailer-container {
         height: 80vh;
     }
 
@@ -65,7 +65,7 @@ iframe {
 }   
 
 @media only screen and (min-width: 650px) and (max-width: 999px) and (min-height: 1020px) {
-    .trailer {
+    .trailer-container {
         height: 60vh;
     }
 
@@ -80,7 +80,7 @@ iframe {
 }
 
 @media only screen and (min-width: 650px) and (max-width: 999px) and (max-height: 1019px) {
-    .trailer {
+    .trailer-container {
         height: 60vh;
     }
 
@@ -95,7 +95,7 @@ iframe {
 }
 
 @media only screen and (min-width: 550px) and (max-width: 649px) {
-    .trailer {
+    .trailer-container {
         height: 60vh;
     }
 
@@ -110,7 +110,7 @@ iframe {
 }
 
 @media only screen and (min-width: 450px) and (max-width: 549px) {
-    .trailer {
+    .trailer-container {
         height: 60vh;
     }
 
@@ -125,7 +125,7 @@ iframe {
 }
 
 @media only screen and (min-width: 350px) and (max-width: 449px) {
-    .trailer {
+    .trailer-container {
         height: 45vh;
     }
 
@@ -140,7 +140,7 @@ iframe {
 }
 
 @media only screen and (max-width: 349px) {
-    .trailer {
+    .trailer-container {
         height: 45vh;
     }
 
