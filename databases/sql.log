@@ -1,4 +1,4 @@
-timestamp: 2019-01-29T11:43:02.589000
+timestamp: 2019-02-03T19:48:01.227000
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "first_name" CHAR(128),
@@ -10,21 +10,21 @@ CREATE TABLE "auth_user"(
     "registration_id" CHAR(512)
 );
 success!
-timestamp: 2019-01-29T11:43:02.632000
+timestamp: 2019-02-03T19:48:01.253000
 CREATE TABLE "auth_group"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "role" CHAR(512),
     "description" TEXT
 );
 success!
-timestamp: 2019-01-29T11:43:02.663000
+timestamp: 2019-02-03T19:48:01.270000
 CREATE TABLE "auth_membership"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2019-01-29T11:43:02.699000
+timestamp: 2019-02-03T19:48:01.287000
 CREATE TABLE "auth_permission"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
@@ -33,7 +33,7 @@ CREATE TABLE "auth_permission"(
     "record_id" INTEGER
 );
 success!
-timestamp: 2019-01-29T11:43:02.735000
+timestamp: 2019-02-03T19:48:01.306000
 CREATE TABLE "auth_event"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "time_stamp" TIMESTAMP,
@@ -43,7 +43,7 @@ CREATE TABLE "auth_event"(
     "description" TEXT
 );
 success!
-timestamp: 2019-01-29T11:43:02.769000
+timestamp: 2019-02-03T19:48:01.324000
 CREATE TABLE "auth_cas"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
@@ -53,14 +53,14 @@ CREATE TABLE "auth_cas"(
     "renew" CHAR(1)
 );
 success!
-timestamp: 2019-01-30T18:03:42.752000
+timestamp: 2019-02-03T19:48:01.346000
 CREATE TABLE "home_page_assets"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "logo" CHAR(512),
     "trailer_url" CHAR(512)
 );
 success!
-timestamp: 2019-01-30T18:03:42.844000
+timestamp: 2019-02-03T19:48:01.365000
 CREATE TABLE "home_page_screenshots"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "img_src" CHAR(512)
