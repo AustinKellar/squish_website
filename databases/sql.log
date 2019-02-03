@@ -66,3 +66,7 @@ CREATE TABLE "home_page_screenshots"(
     "img_src" CHAR(512)
 );
 success!
+success!
+success!
+success!
+success!

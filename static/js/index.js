@@ -1,5 +1,4 @@
 var onPageLoad = function() {
-    console.log("here");
     if (window.location.pathname.toUpperCase() == '/SQUISH/DEFAULT/INDEX') {
         window.location.pathname = '/Squish';
     }
@@ -18,7 +17,7 @@ var app = new Vue({
     delimiters: ['${', '}'],
     unsafeDelimiters: ['!{', '}'],
     data: {
-        route: 'home'
+        route: 'home',
     },
     methods: {
         setRoute: setRoute

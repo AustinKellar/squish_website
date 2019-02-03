@@ -1,1 +1,14 @@
-<h1>edit page</h1>
+{{extend 'layout.html'}}
+
+<script>
+    var getLogoUrl = "{{=URL('api', 'get_logo')}}";
+    var getTrailerUrl = "{{=URL('api', 'get_trailer_url')}}";
+    var getScreenshotsUrl = "{{=URL('api', 'get_screenshots')}}";
+</script>
+
+<div id="edit">
+    <img v-bind:src="logo"/>
+    <input type="file" v-on:change="logoChanged"/>
+</div>
+
+<script src="{{=URL('static','js/edit.js')}}"></script>

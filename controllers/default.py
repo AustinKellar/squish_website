@@ -7,14 +7,18 @@
 # ---- example index page ----
 def index():
     home_page_assets = db(db.home_page_assets).select().first()
-    logo = URL('download', args=home_page_assets.logo)
-    trailer_url = home_page_assets.trailer_url
+    if home_page_assets:
+        logo = home_page_assets.logo
+        trailer_url = home_page_assets.trailer_url
+    else:
+        logo = None
+        trailer_url = None
 
-    raw_screenshots = db(db.home_page_screenshots).select()
+    home_page_screenshots = db(db.home_page_screenshots).select()
 
     screenshots = []
-    for pic in raw_screenshots:
-        screenshots.append(URL('download', args=pic.img_src))
+    for screenshot in home_page_screenshots:
+        screenshots.append(screenshot.img_src)
 
     return dict(logo=logo, trailer_url=trailer_url, screenshots=screenshots)
 
