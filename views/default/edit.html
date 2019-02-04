@@ -1,13 +1,13 @@
 {{extend 'layout.html'}}
 
 <script>
-    var getLogoUrl = "{{=URL('api', 'get_logo')}}";
-    var getTrailerUrl = "{{=URL('api', 'get_trailer_url')}}";
-    var getScreenshotsUrl = "{{=URL('api', 'get_screenshots')}}";
-    var saveLogoUrl = "{{=URL('api', 'save_logo')}}";
-    var saveTrailerUrl = "{{=URL('api', 'save_trailer')}}";
-    var saveScreenshotUrl = "{{=URL('api', 'save_screenshot')}}";
-    var deleteScreenshotUrl = "{{=URL('api', 'delete_screenshot')}}";
+    var getLogoUrl = "{{=URL('api', 'get_logo', user_signature=True)}}";
+    var getTrailerUrl = "{{=URL('api', 'get_trailer_url', user_signature=True)}}";
+    var getScreenshotsUrl = "{{=URL('api', 'get_screenshots', user_signature=True)}}";
+    var saveLogoUrl = "{{=URL('api', 'save_logo', user_signature=True)}}";
+    var saveTrailerUrl = "{{=URL('api', 'save_trailer', user_signature=True)}}";
+    var saveScreenshotUrl = "{{=URL('api', 'save_screenshot', user_signature=True)}}";
+    var deleteScreenshotUrl = "{{=URL('api', 'delete_screenshot', user_signature=True)}}";
 </script>
 
 <div id="edit">
@@ -24,19 +24,17 @@
 
     <br><br>
 
-    <h2>Screenshots</h2>
+    <h2>Media</h2>
     <div v-for="screenshot in screenshots">
         <img v-bind:src="screenshot.img_src" width="150"/><br>
         <button v-on:click="deleteScreenshot(screenshot.index)">Delete</button><br><br>
     </div>
 
     <br><br>
-    <h2>Add Screenshot</h2>
+    <h2>Add Media</h2>
     <img v-bind:src="selectedScreenshot" width="150"/><br>
     <input type="file" v-on:change="screenshotChanged"/><br><br>
     <button v-on:click="saveScreenshot">Save Screenshot</button>
-
-
 </div>
 
 <script src="{{=URL('static','js/edit.js')}}"></script>

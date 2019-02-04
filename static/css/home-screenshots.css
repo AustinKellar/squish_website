@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 60px 0px;
 }
 
 .screenshots-content {
@@ -32,7 +33,7 @@
 
 @media only screen and (min-width: 1250px) {
     .screenshots-container {
-        height: 110vh;
+        min-height: 110vh;
     }
 
     .screenshots-header {
@@ -40,14 +41,13 @@
     }
 
     .carousel-item {
-        width: 60vw;
-        height: 34vw;
+        max-width: 60vw;
     }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px) {
     .screenshots-container {
-        height: 70vh;
+        min-height: 70vh;
     }
 
     .screenshots-header {
@@ -55,14 +55,13 @@
     }
 
     .carousel-item {
-        width: 81vw;
-        height: 46vw;
+        max-width: 81vw;
     }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
     .screenshots-container {
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .screenshots-header {
@@ -70,14 +69,13 @@
     }
 
     .carousel-item {
-        width: 60vw;
-        height: 34vw;
+        max-width: 60vw;
     }  
 }
 
 @media only screen and (min-width: 650px) and (max-width: 999px) and (min-height: 1020px) {
     .screenshots-container {
-        height: 65vh;
+        min-height: 65vh;
     }
 
     .screenshots-header {
@@ -85,14 +83,13 @@
     }
 
     .carousel-item {
-        width: 81vw;
-        height: 46vw;
+        max-width: 81vw;
     }
 }
 
 @media only screen and (min-width: 650px) and (max-width: 999px) and (max-height: 1019px) {
     .screenshots-container {
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .screenshots-header {
@@ -100,14 +97,13 @@
     }
 
     .carousel-item {
-        width: 81vw;
-        height: 46vw;
+        max-width: 81vw;
     }
 }
 
 @media only screen and (min-width: 550px) and (max-width: 649px) {
     .screenshots-container {
-        height: 80vh;
+        min-height: 80vh;
     }
 
     .screenshots-header {
@@ -115,14 +111,13 @@
     }
 
     .carousel-item {
-        width: 81vw;
-        height: 46vw;
+        max-width: 81vw;
     }
 }
 
 @media only screen and (min-width: 450px) and (max-width: 549px) {
     .screenshots-container {
-        height: 60vh;
+        min-height: 60vh;
     }
 
     .screenshots-header {
@@ -130,14 +125,13 @@
     }
 
     .carousel-item {
-        width: 81vw;
-        height: 46vw;
+        max-width: 81vw;
     }
 }
 
 @media only screen and (min-width: 350px) and (max-width: 449px) {
     .screenshots-container {
-        height: 45vh;
+        min-height: 45vh;
     }
 
     .screenshots-header {
@@ -145,14 +139,13 @@
     }
 
     .carousel-item {
-        width: 81vw;
-        height: 46vw;
+        max-width: 81vw;
     }
 }
 
 @media only screen and (max-width: 349px) {
     .screenshots-container {
-        height: 45vh;
+        min-height: 45vh;
     }
 
     .screenshots-header {
@@ -160,7 +153,6 @@
     }
 
     .carousel-item {
-        width: 81vw;
-        height: 46vw;
+        max-width: 81vw;
     } 
 }

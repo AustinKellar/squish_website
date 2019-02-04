@@ -1,3 +1,4 @@
+@auth.requires_signature()
 def get_logo():
     home_page_assets = db(db.home_page_assets).select().first()
     if home_page_assets:
@@ -5,6 +6,7 @@ def get_logo():
     else:
         return response.json(dict(logo=None))
 
+@auth.requires_signature()
 def get_trailer_url():
     home_page_assets = db(db.home_page_assets).select().first()
     if home_page_assets:
@@ -12,6 +14,7 @@ def get_trailer_url():
     else:
         return response.json(dict(trailer_url=None))
 
+@auth.requires_signature()
 def get_screenshots():
     home_page_screenshots = db(db.home_page_screenshots).select()
 
@@ -21,6 +24,7 @@ def get_screenshots():
 
     return response.json(dict(screenshots=screenshots))
 
+@auth.requires_signature()
 def save_logo():
     db.home_page_assets.update_or_insert(
         db.home_page_assets.id == request.vars.id,
@@ -29,6 +33,7 @@ def save_logo():
 
     return "success"
 
+@auth.requires_signature()
 def save_trailer():
     db.home_page_assets.update_or_insert(
         db.home_page_assets.id == request.vars.id,
@@ -37,6 +42,7 @@ def save_trailer():
 
     return "success"
 
+@auth.requires_signature()
 def save_screenshot():
     id = db.home_page_screenshots.insert(
         img_src = request.vars.screenshot
@@ -44,6 +50,7 @@ def save_screenshot():
 
     return response.json(dict(id=id))
 
+@auth.requires_signature()
 def delete_screenshot():
     db(db.home_page_screenshots.id == request.vars.id).delete()
     return "success"
