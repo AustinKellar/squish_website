@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 0px;
+    padding: 0px 0px;
 }
 
 .screenshots-content {
@@ -33,25 +33,34 @@
 
 @media only screen and (min-width: 1250px) {
     .screenshots-container {
-        min-height: 110vh;
+        height: 110vh;
     }
 
     .screenshots-header {
         font-size: 105px;
     }
 
+    .carousel {
+        height: 35vw;
+    }
+
     .carousel-item {
         max-width: 60vw;
+        max-height: 35vw;
     }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px) {
     .screenshots-container {
-        min-height: 70vh;
+        height: 70vh;
     }
 
     .screenshots-header {
         font-size: 105px;
+    }
+
+    .carousel {
+        height: 35vh;
     }
 
     .carousel-item {
@@ -61,11 +70,15 @@
 
 @media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
     .screenshots-container {
-        min-height: 100vh;
+        height: 100vh;
     }
 
     .screenshots-header {
         font-size: 85px;
+    }
+
+    .carousel {
+        height: 35vw;
     }
 
     .carousel-item {
@@ -75,11 +88,15 @@
 
 @media only screen and (min-width: 650px) and (max-width: 999px) and (min-height: 1020px) {
     .screenshots-container {
-        min-height: 65vh;
+        height: 65vh;
     }
 
     .screenshots-header {
         font-size: 85px;
+    }
+
+    .carousel {
+        height: 45vw;
     }
 
     .carousel-item {
@@ -89,11 +106,15 @@
 
 @media only screen and (min-width: 650px) and (max-width: 999px) and (max-height: 1019px) {
     .screenshots-container {
-        min-height: 100vh;
+        height: 100vh;
     }
 
     .screenshots-header {
         font-size: 55px;
+    }
+
+    .carousel {
+        height: 48vw;
     }
 
     .carousel-item {
@@ -103,11 +124,15 @@
 
 @media only screen and (min-width: 550px) and (max-width: 649px) {
     .screenshots-container {
-        min-height: 80vh;
+        height: 80vh;
     }
 
     .screenshots-header {
         font-size: 55px;
+    }
+
+    .carousel {
+        height: 50vw;
     }
 
     .carousel-item {
@@ -117,11 +142,15 @@
 
 @media only screen and (min-width: 450px) and (max-width: 549px) {
     .screenshots-container {
-        min-height: 60vh;
+        height: 60vh;
     }
 
     .screenshots-header {
         font-size: 55px;
+    }
+
+    .carousel {
+        height: 48vw;
     }
 
     .carousel-item {
@@ -131,11 +160,15 @@
 
 @media only screen and (min-width: 350px) and (max-width: 449px) {
     .screenshots-container {
-        min-height: 45vh;
+        height: 45vh;
     }
 
     .screenshots-header {
         font-size: 40px;
+    }
+
+    .carousel {
+        height: 51vw;
     }
 
     .carousel-item {
@@ -145,11 +178,15 @@
 
 @media only screen and (max-width: 349px) {
     .screenshots-container {
-        min-height: 45vh;
+        height: 45vh;
     }
 
     .screenshots-header {
         font-size: 40px;
+    }
+
+    .carousel {
+        height: 51vw;
     }
 
     .carousel-item {
