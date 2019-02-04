@@ -6,6 +6,8 @@
     var getScreenshotsUrl = "{{=URL('api', 'get_screenshots')}}";
     var saveLogoUrl = "{{=URL('api', 'save_logo')}}";
     var saveTrailerUrl = "{{=URL('api', 'save_trailer')}}";
+    var saveScreenshotUrl = "{{=URL('api', 'save_screenshot')}}";
+    var deleteScreenshotUrl = "{{=URL('api', 'delete_screenshot')}}";
 </script>
 
 <div id="edit">
@@ -19,6 +21,22 @@
     <p>Make sure that you use an embed link! It should be formated the same as the current url.</p>
     <textarea v-model="trailerUrl"></textarea><br>
     <button v-on:click="saveTrailer">Save Trailer Url</button>
+
+    <br><br>
+
+    <h2>Screenshots</h2>
+    <div v-for="screenshot in screenshots">
+        <img v-bind:src="screenshot.img_src" width="150"/><br>
+        <button v-on:click="deleteScreenshot(screenshot.index)">Delete</button><br><br>
+    </div>
+
+    <br><br>
+    <h2>Add Screenshot</h2>
+    <img v-bind:src="selectedScreenshot" width="150"/><br>
+    <input type="file" v-on:change="screenshotChanged"/><br><br>
+    <button v-on:click="saveScreenshot">Save Screenshot</button>
+
+
 </div>
 
 <script src="{{=URL('static','js/edit.js')}}"></script>

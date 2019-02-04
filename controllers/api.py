@@ -16,8 +16,8 @@ def get_screenshots():
     home_page_screenshots = db(db.home_page_screenshots).select()
 
     screenshots = []
-    for index, screenshot in enumerate(home_page_screenshots):
-        screenshots.append(dict(img=screenshot.img_src, index=index))
+    for screenshot in home_page_screenshots:
+        screenshots.append(screenshot)
 
     return response.json(dict(screenshots=screenshots))
 
@@ -35,4 +35,15 @@ def save_trailer():
         trailer_url = request.vars.trailer_url
     )
 
+    return "success"
+
+def save_screenshot():
+    id = db.home_page_screenshots.insert(
+        img_src = request.vars.screenshot
+    )
+
+    return response.json(dict(id=id))
+
+def delete_screenshot():
+    db(db.home_page_screenshots.id == request.vars.id).delete()
     return "success"

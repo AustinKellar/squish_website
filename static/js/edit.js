@@ -1,3 +1,10 @@
+var processData = function() {
+    var i = 0;
+    editController.screenshots.map((screenshot) => {
+        screenshot.index = i++;
+    });
+};
+
 var retrieveInitialData = function() {
     $.getJSON(getLogoUrl, (response) => {
         editController.logo = response.logo;
@@ -6,7 +13,12 @@ var retrieveInitialData = function() {
 
     $.getJSON(getTrailerUrl, (response) => {
         editController.trailerUrl = response.trailer_url;
-    })
+    });
+
+    $.getJSON(getScreenshotsUrl, (response) => {
+        editController.screenshots = response.screenshots;
+        processData();
+    });
 };
 
 var logoChanged = function(event) {
@@ -38,7 +50,41 @@ var saveTrailer = function() {
     }, (response) => {
         alert('Success!');
     });
-}
+};
+
+var screenshotChanged = function(event) {
+    var input = event.target;
+    var file = input.files[0];
+    if (file) {
+        var reader = new FileReader();
+        reader.addEventListener('load', () => {
+            editController.selectedScreenshot = reader.result
+        }, false);
+        reader.readAsDataURL(file);
+    }
+};
+
+var saveScreenshot = function() {
+    $.post(saveScreenshotUrl, {
+        screenshot: editController.selectedScreenshot
+    }, (response) => {
+        editController.screenshots.push({img_src: editController.selectedScreenshot, id: response.id});
+        processData();
+        editController.selectedScreenshot = undefined;
+        alert('Success!');
+    });
+};
+
+var deleteScreenshot = function(index) {
+    var screenshot = editController.screenshots[index];
+    $.post(deleteScreenshotUrl, {
+        id: screenshot.id
+    }, (response) => {
+        editController.screenshots.splice(index, 1);
+        processData();
+        alert('success!');
+    });
+};
 
 var editController = new Vue({
     el: '#edit',
@@ -47,12 +93,15 @@ var editController = new Vue({
     data: {
         logo: undefined,
         logo_src: undefined,
-        trailerUrl: undefined
+        trailerUrl: undefined,
+        screenshots: [],
+        selectedScreenshot: undefined
     },
     methods: {
         logoChanged: logoChanged,
         saveLogo: saveLogo,
-        saveTrailer: saveTrailer
+        saveTrailer: saveTrailer,
+        saveScreenshot: saveScreenshot
     }
 });
 
