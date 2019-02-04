@@ -1,8 +1,12 @@
 var retrieveInitialData = function() {
     $.getJSON(getLogoUrl, (response) => {
         editController.logo = response.logo;
-        console.log(response.logo);
+        editController.logo_src = response.logo.logo
     });
+
+    $.getJSON(getTrailerUrl, (response) => {
+        editController.trailerUrl = response.trailer_url;
+    })
 };
 
 var logoChanged = function(event) {
@@ -11,11 +15,30 @@ var logoChanged = function(event) {
     if (file) {
         var reader = new FileReader();
         reader.addEventListener('load', () => {
-            editController.logo = reader.result
+            editController.logo.logo = reader.result;
+            editController.logo_src = reader.result
         }, false);
         reader.readAsDataURL(file);
     }
 };
+
+var saveLogo = function() {
+    $.post(saveLogoUrl, {
+        id: editController.logo.id,
+        logo: editController.logo.logo
+    }, (response) => {
+        alert('Success!');
+    });
+};
+
+var saveTrailer = function() {
+    $.post(saveTrailerUrl, {
+        id: editController.logo.id,
+        trailer_url: editController.trailerUrl
+    }, (response) => {
+        alert('Success!');
+    });
+}
 
 var editController = new Vue({
     el: '#edit',
@@ -23,10 +46,13 @@ var editController = new Vue({
     unsafeDelimiters: ['!{', '}'],
     data: {
         logo: undefined,
-        logoSelector: undefined
+        logo_src: undefined,
+        trailerUrl: undefined
     },
     methods: {
-        logoChanged: logoChanged
+        logoChanged: logoChanged,
+        saveLogo: saveLogo,
+        saveTrailer: saveTrailer
     }
 });
 

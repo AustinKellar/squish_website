@@ -4,11 +4,21 @@
     var getLogoUrl = "{{=URL('api', 'get_logo')}}";
     var getTrailerUrl = "{{=URL('api', 'get_trailer_url')}}";
     var getScreenshotsUrl = "{{=URL('api', 'get_screenshots')}}";
+    var saveLogoUrl = "{{=URL('api', 'save_logo')}}";
+    var saveTrailerUrl = "{{=URL('api', 'save_trailer')}}";
 </script>
 
 <div id="edit">
-    <img v-bind:src="logo"/>
-    <input type="file" v-on:change="logoChanged"/>
+    <h2>Logo</h2>
+    <img width="150" v-bind:src="logo_src"/><br><br>
+    <input type="file" v-on:change="logoChanged"/><br>
+    <button v-on:click="saveLogo">Save Logo</button>
+
+    <br><br>
+    <h2>Gameplay Trailer</h2>
+    <p>Make sure that you use an embed link! It should be formated the same as the current url.</p>
+    <textarea v-model="trailerUrl"></textarea><br>
+    <button v-on:click="saveTrailer">Save Trailer Url</button>
 </div>
 
 <script src="{{=URL('static','js/edit.js')}}"></script>
