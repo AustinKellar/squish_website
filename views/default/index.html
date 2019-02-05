@@ -4,12 +4,19 @@
 
 <div id="app">
     {{ include 'default/nav.html' }}
+    
+    <div id="app-content"  style="display: none;">
+        {{ include 'default/home.html' }}
 
-    {{ include 'default/home.html' }}
+        {{ include 'default/play.html' }}
 
-    {{ include 'default/play.html' }}
+        {{ include 'default/team.html' }}
+    </div>
 
-    {{ include 'default/team.html' }}
+</div>
+
+<div id="spinner" class="loading">
+    <i class="fa fa-spinner fa-spin spinner"></i>
 </div>
 
 <script src="{{=URL('static','js/index.js')}}"></script>

@@ -45,7 +45,7 @@
     }
 
     .carousel-item {
-        max-width: 60vw;
+        width: 60vw;
         max-height: 35vw;
     }
 }
@@ -64,7 +64,7 @@
     }
 
     .carousel-item {
-        max-width: 81vw;
+        width: 81vw;
     }
 }
 
@@ -82,7 +82,7 @@
     }
 
     .carousel-item {
-        max-width: 60vw;
+        width: 60vw;
     }  
 }
 
@@ -100,7 +100,7 @@
     }
 
     .carousel-item {
-        max-width: 81vw;
+        width: 81vw;
     }
 }
 
@@ -118,7 +118,7 @@
     }
 
     .carousel-item {
-        max-width: 81vw;
+        width: 81vw;
     }
 }
 
@@ -136,7 +136,7 @@
     }
 
     .carousel-item {
-        max-width: 81vw;
+        width: 81vw;
     }
 }
 
@@ -154,7 +154,7 @@
     }
 
     .carousel-item {
-        max-width: 81vw;
+        width: 81vw;
     }
 }
 
@@ -172,7 +172,7 @@
     }
 
     .carousel-item {
-        max-width: 81vw;
+        width: 81vw;
     }
 }
 
@@ -190,6 +190,6 @@
     }
 
     .carousel-item {
-        max-width: 81vw;
+        width: 81vw;
     } 
 }

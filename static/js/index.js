@@ -3,7 +3,8 @@ var onPageLoad = function() {
         window.location.pathname = '/Squish';
     }
     setTimeout(() => {
-        app.loaded = true;
+        $('#app-content').show();
+        $('#spinner').hide();
     }, 750);
 };
 
