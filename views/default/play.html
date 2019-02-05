@@ -1,3 +1,27 @@
+<script>
+    var getPlaytestsUrl = "{{=URL('api', 'get_playtests')}}";
+</script>
+
+<link rel="stylesheet" href="{{=URL('static','css/play.css')}}"/>
+
 <div v-if="route == 'play'">
-    <h1>Play page coming soon</h1>
+    <div v-for="playtest in playtests">
+        <div v-if="playtest.index % 2 == 0" class="playtest-container">
+            <div class="playtest-content">
+                <h1 class="playtest-title">${ playtest.title }</h1>
+                <div class="playtest-ad-container">
+                    <div class="playtest-date-container">
+                        <div class="playtest-date">${ playtest.playtest_date }</div>
+                        <div class="playtest-time">${ playtest.playtest_time }</div>
+                        <div class="playtest-location">${ playtest.playtest_location }</div>
+                    </div>
+                    <img class="playtest-image" v-bind:src="playtest.image" v-on:click="openImage(playtest.image)"/>
+                </div>
+                <div class="playtest-text">
+                    <div class="playtest-tagline">${ playtest.tagline }</div>
+                    <div class="playtest-description">${ playtest.description }</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

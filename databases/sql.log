@@ -70,3 +70,17 @@ success!
 success!
 success!
 success!
+timestamp: 2019-02-05T03:49:05.200000
+CREATE TABLE "playtests"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "title" CHAR(512),
+    "image" TEXT,
+    "playtest_date" CHAR(512),
+    "playtest_time" CHAR(512),
+    "tagline" CHAR(512),
+    "description" CHAR(512)
+);
+success!
+timestamp: 2019-02-05T03:54:26.736000
+ALTER TABLE "playtests" ADD "playtest_location" CHAR(512);
+success!

@@ -24,6 +24,27 @@ def get_screenshots():
 
     return response.json(dict(screenshots=screenshots))
 
+def get_playtests():
+    playtests = db(db.playtests).select()
+    if (playtests):
+        return response.json(dict(playtests=playtests))
+    else:
+        return response.json(dict(playtests=[]))
+
+@auth.requires_signature()
+def save_playtest():
+    id = db.playtests.insert(
+        title = request.vars.title,
+        image = request.vars.image,
+        playtest_date = request.vars.playtest_date,
+        playtest_time = request.vars.playtest_time,
+        playtest_location = request.vars.playtest_location,
+        tagline = request.vars.tagline,
+        description = request.vars.description
+    )
+    
+    return response.json(dict(id=id))
+
 @auth.requires_signature()
 def save_logo():
     db.home_page_assets.update_or_insert(
