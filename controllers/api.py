@@ -46,6 +46,12 @@ def save_playtest():
     return response.json(dict(id=id))
 
 @auth.requires_signature()
+def delete_playtest():
+    db(db.playtests.id == request.vars.id).delete()
+
+    return "success"
+
+@auth.requires_signature()
 def save_logo():
     db.home_page_assets.update_or_insert(
         db.home_page_assets.id == request.vars.id,

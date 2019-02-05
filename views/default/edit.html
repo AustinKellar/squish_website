@@ -4,10 +4,13 @@
     var getLogoUrl = "{{=URL('api', 'get_logo', user_signature=True)}}";
     var getTrailerUrl = "{{=URL('api', 'get_trailer_url', user_signature=True)}}";
     var getScreenshotsUrl = "{{=URL('api', 'get_screenshots', user_signature=True)}}";
+    var getPlaytestsUrl = "{{=URL('api', 'get_playtests', user_signature=True)}}";
     var saveLogoUrl = "{{=URL('api', 'save_logo', user_signature=True)}}";
     var saveTrailerUrl = "{{=URL('api', 'save_trailer', user_signature=True)}}";
     var saveScreenshotUrl = "{{=URL('api', 'save_screenshot', user_signature=True)}}";
     var deleteScreenshotUrl = "{{=URL('api', 'delete_screenshot', user_signature=True)}}";
+    var savePlaytestUrl = "{{=URL('api', 'save_playtest', user_signature=True)}}";
+    var deletePlaytestUrl = "{{=URL('api', 'delete_playtest', user_signature=True)}}";
 </script>
 
 <div id="edit">
@@ -35,6 +38,33 @@
     <img v-bind:src="selectedScreenshot" width="150"/><br>
     <input type="file" v-on:change="screenshotChanged"/><br><br>
     <button v-on:click="saveScreenshot">Save Screenshot</button>
+
+    <br><br>
+    <h2>Playtests</h2>
+    <div v-for="playtest in playtests">
+        <h4>${ playtest.title }</h4>
+        <img width="150" v-bind:src="playtest.image"/><br>
+        <button v-on:click="deletePlaytest(playtest.index)">Delete</button><br><br>
+    </div>
+
+    <br><br>
+    <h2>Add Playtest</h2>
+    <label>Title</label>
+    <input v-model="playtestTitle"/><br><br>
+    <label>Image</label><br>
+    <img width="150" v-bind:src="playtestImage"/><br>
+    <input type="file" v-on:change="playtestChanged"/><br><br>
+    <label>Date</label>
+    <input v-model="playtestDate"/><br>
+    <label>Time</label>
+    <input v-model="playtestTime"/><br>
+    <label>Location</label>
+    <input v-model="playtestLocation"/><br>
+    <label>Tagline</label>
+    <textarea v-model="playtestTagline"></textarea><br>
+    <label>Description</label>
+    <textarea v-model="playtestDescription"></textarea><br><br>
+    <button v-on:click="savePlaytest">Save Playtest</button>
 </div>
 
 <script src="{{=URL('static','js/edit.js')}}"></script>
