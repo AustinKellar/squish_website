@@ -1,5 +1,5 @@
 .playtest-container {
-    height: 95vh;
+    height: 105vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,15 +41,11 @@
 }
 
 .lengthened {
-    height: 105vh;
-}
-
-.slightly-lengthened {
-    height: 97vh;
+    height: 115vh;
 }
 
 .shortened {
-    height: 85vh;
+    height: 95vh;
 }
 
 .dark-gray {

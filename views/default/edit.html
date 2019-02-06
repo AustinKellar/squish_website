@@ -11,6 +11,8 @@
     var deleteScreenshotUrl = "{{=URL('api', 'delete_screenshot', user_signature=True)}}";
     var savePlaytestUrl = "{{=URL('api', 'save_playtest', user_signature=True)}}";
     var deletePlaytestUrl = "{{=URL('api', 'delete_playtest', user_signature=True)}}";
+    var getScreenshotUrl = "{{=URL('api', 'get_screenshot', user_signature=True)}}";
+    var saveTitleScreenshotUrl = "{{=URL('api', 'save_title_screenshot', user_signature=True)}}";
 </script>
 
 <div id="edit">
@@ -18,6 +20,13 @@
     <img width="150" v-bind:src="logo_src"/><br><br>
     <input type="file" v-on:change="logoChanged"/><br>
     <button v-on:click="saveLogo">Save Logo</button>
+
+    <br><br>
+    <h2>Title Screenshot</h2>
+    <img width="150" v-bind:src="screenshot"/><br>
+    <input type="file" v-on:change="titleScreenshotChanged"/><br>
+    <button v-on:click="saveTitleScreenshot">Save Title Screenshot</button>
+
 
     <br><br>
     <h2>Gameplay Trailer</h2>

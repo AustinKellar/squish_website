@@ -84,3 +84,6 @@ success!
 timestamp: 2019-02-05T03:54:26.736000
 ALTER TABLE "playtests" ADD "playtest_location" CHAR(512);
 success!
+timestamp: 2019-02-06T05:45:24.320000
+ALTER TABLE "home_page_assets" ADD "screenshot" TEXT;
+success!

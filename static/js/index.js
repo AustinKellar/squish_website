@@ -9,15 +9,20 @@ var onPageLoad = function() {
     if (window.location.pathname.toUpperCase() == '/SQUISH/DEFAULT/INDEX') {
         window.location.pathname = '/Squish';
     }
-    setTimeout(() => {
+
+    $.getJSON(getScreenshotUrl, (response) => {
+        app.screenshot = response.screenshot;
+        $('#home-title-container').css('background-image', 'url(' + response.screenshot + ')');
         $('#app-content').show();
         $('#spinner').hide();
-    }, 750);
+    });
 
     $.getJSON(getPlaytestsUrl, (response) => {
         app.playtests = response.playtests;
         processInfo();
     });
+
+
 };
 
 var setRoute = function(route) {

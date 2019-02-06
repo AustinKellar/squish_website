@@ -15,6 +15,10 @@ var retrieveInitialData = function() {
         editController.logo_src = response.logo.logo
     });
 
+    $.getJSON(getScreenshotUrl, (response) => {
+        editController.screenshot = response.screenshot;
+    });
+
     $.getJSON(getTrailerUrl, (response) => {
         editController.trailerUrl = response.trailer_url;
     });
@@ -51,6 +55,27 @@ var saveLogo = function() {
         alert('Success!');
     });
 };
+
+var titleScreenshotChanged = function(event) {
+    var input = event.target;
+    var file = input.files[0];
+    if (file) {
+        var reader = new FileReader();
+        reader.addEventListener('load', () => {
+            editController.screenshot = reader.result;
+        }, false);
+        reader.readAsDataURL(file);
+    }
+};
+
+var saveTitleScreenshot = function(event) {
+    $.post(saveTitleScreenshotUrl, {
+        id: editController.logo.id,
+        screenshot: editController.screenshot
+    }, (response) => {
+        alert('Success!');
+    })
+}
 
 var saveTrailer = function() {
     $.post(saveTrailerUrl, {
@@ -141,6 +166,7 @@ var editController = new Vue({
     data: {
         logo: undefined,
         logo_src: undefined,
+        screenshot: undefined,
         trailerUrl: undefined,
         screenshots: [],
         selectedScreenshot: undefined,
@@ -159,7 +185,9 @@ var editController = new Vue({
         saveTrailer: saveTrailer,
         saveScreenshot: saveScreenshot,
         savePlaytest: savePlaytest,
-        deletePlaytest: deletePlaytest
+        deletePlaytest: deletePlaytest,
+        titleScreenshotChanged: titleScreenshotChanged,
+        saveTitleScreenshot: saveTitleScreenshot
     }
 });
 

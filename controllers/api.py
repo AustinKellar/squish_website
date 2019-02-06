@@ -6,6 +6,13 @@ def get_logo():
     else:
         return response.json(dict(logo=None))
 
+def get_screenshot():
+    home_page_assets = db(db.home_page_assets).select().first()
+    if home_page_assets:
+        return response.json(dict(screenshot=home_page_assets.screenshot))
+    else:
+        return response.json(dict(screenshot=None))
+
 @auth.requires_signature()
 def get_trailer_url():
     home_page_assets = db(db.home_page_assets).select().first()
@@ -59,6 +66,15 @@ def save_logo():
     )
 
     return "success"
+
+@auth.requires_signature()
+def save_title_screenshot():
+    db.home_page_assets.update_or_insert(
+        db.home_page_assets.id == request.vars.id,
+        screenshot = request.vars.screenshot
+    )
+
+    return "success"   
 
 @auth.requires_signature()
 def save_trailer():

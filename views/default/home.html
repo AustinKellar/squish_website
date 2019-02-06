@@ -2,6 +2,7 @@
     var getLogoUrl = "{{=URL('api', 'get_logo')}}";
     var getTrailerUrl = "{{=URL('api', 'get_trailer_url')}}";
     var getScreenshotsUrl = "{{=URL('api', 'get_screenshots')}}";
+    var getScreenshotUrl = "{{=URL('api', 'get_screenshot')}}";
 </script>
 
 <link rel="stylesheet" href="{{=URL('static','css/home-title.css')}}" />
@@ -9,11 +10,10 @@
 <link rel="stylesheet" href="{{=URL('static','css/home-screenshots.css')}}" />
 
 <div v-if="route == 'home'">
-    <div class="title-container">
+    <div id="home-title-container" class="title-container">
         <div class="title-content">
             <h1 class="title-header">SQUISH</h1>
             <img class="logo" src="{{ = logo}}" />
-            <h5 class="subtitle-header">A Grave Rave Gone Awry!</h5>
         </div>
     </div>
 
