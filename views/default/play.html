@@ -6,7 +6,7 @@
 
 <div v-if="route == 'play'">
     <div v-for="playtest in playtests">
-        <div v-if="playtest.index % 2 == 0 && playtest.index == 0" class="playtest-container dark-gray slant-bottom-towards-right">
+        <div v-if="playtest.index % 2 == 0 && playtest.index == 0 && playtest.index != playtests.length-1" class="playtest-container dark-gray slant-bottom-towards-right">
             <div class="playtest-content shift-up">
                 <h1 class="playtest-title">${ playtest.title }</h1>
                 <div class="playtest-ad-container">
@@ -40,8 +40,25 @@
                 </div>
             </div>
         </div>
-        <div v-if="playtest.index % 2 == 0 && playtest.index == playtests.length-1" class="playtest-container dark-gray slant-top-towards-left">
+        <div v-if="playtest.index % 2 == 0 && playtest.index == playtests.length-1 && playtest.index != 0" class="playtest-container dark-gray slant-top-towards-left">
             <div class="playtest-content shift-down">
+                <h1 class="playtest-title">${ playtest.title }</h1>
+                <div class="playtest-ad-container">
+                    <div class="playtest-date-container light-gray rounded-left">
+                        <div class="playtest-date">${ playtest.playtest_date }</div>
+                        <div class="playtest-time">${ playtest.playtest_time }</div>
+                        <div class="playtest-location">${ playtest.playtest_location }</div>
+                    </div>
+                    <img class="playtest-image rounded-right" v-bind:src="playtest.image" v-on:click="openImage(playtest.image)"/>
+                </div>
+                <div class="playtest-text">
+                    <div class="playtest-tagline">${ playtest.tagline }</div>
+                    <div class="playtest-description">${ playtest.description }</div>
+                </div>
+            </div>
+        </div>
+        <div v-if="playtest.index == 0 && playtest.index == playtests.length-1" class="playtest-container dark-gray">
+            <div class="playtest-content">
                 <h1 class="playtest-title">${ playtest.title }</h1>
                 <div class="playtest-ad-container">
                     <div class="playtest-date-container light-gray rounded-left">
@@ -74,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="playtest.index % 2 == 1 && playtest.index == playtests.length -1" class="playtest-container transparent shift-up shortened">
+        <div v-if="playtest.index % 2 == 1 && playtest.index == playtests.length -1" class="playtest-container transparent shift-up shortened-slightly">
             <div class="playtest-content">
                 <h1 class="playtest-title">${ playtest.title }</h1>
                 <div class="playtest-ad-container">

@@ -10,9 +10,13 @@ def index():
     if home_page_assets:
         logo = home_page_assets.logo
         trailer_url = home_page_assets.trailer_url
+        title_screenshot = home_page_assets.screenshot
+        description = home_page_assets.description
     else:
         logo = None
         trailer_url = None
+        title_screenshot = None
+        description = home_page_assets.description
 
     home_page_screenshots = db(db.home_page_screenshots).select()
 
@@ -20,7 +24,7 @@ def index():
     for screenshot in home_page_screenshots:
         screenshots.append(screenshot.img_src)
 
-    return dict(logo=logo, trailer_url=trailer_url, screenshots=screenshots)
+    return dict(logo=logo, title_screenshot=title_screenshot, description = description, trailer_url=trailer_url, screenshots=screenshots)
 
 @auth.requires(auth.user_id == 1, requires_login=True)
 def edit():

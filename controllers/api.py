@@ -14,6 +14,23 @@ def get_screenshot():
         return response.json(dict(screenshot=None))
 
 @auth.requires_signature()
+def get_description():
+    home_page_assets = db(db.home_page_assets).select().first()
+    if home_page_assets:
+        return response.json(dict(description=home_page_assets.description))
+    else:
+        return response.json(dict(description=None))
+
+@auth.requires_signature()
+def save_description():
+    db.home_page_assets.update_or_insert(
+        db.home_page_assets.id == request.vars.id,
+        description = request.vars.description
+    )
+
+    return "success"
+
+@auth.requires_signature()
 def get_trailer_url():
     home_page_assets = db(db.home_page_assets).select().first()
     if home_page_assets:

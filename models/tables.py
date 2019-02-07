@@ -1,7 +1,8 @@
 db.define_table('home_page_assets',
     Field('logo', 'text'),
     Field('screenshot', 'text', requires=IS_LENGTH(1200000)),
-    Field('trailer_url')
+    Field('trailer_url'),
+    Field('description', 'text')
 )
 
 db.define_table('home_page_screenshots', 

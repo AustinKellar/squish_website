@@ -10,15 +10,10 @@ var onPageLoad = function() {
         window.location.pathname = '/Squish';
     }
 
-    $.getJSON(getScreenshotUrl, (response) => {
-        app.screenshot = response.screenshot;
-        $('#home-title-container').css('background-image', 'url(' + response.screenshot + ')');
-        $('#app-content').show();
-        $('#spinner').hide();
-    });
-
     $.getJSON(getPlaytestsUrl, (response) => {
         app.playtests = response.playtests;
+        $('#app-content').show();
+        $('#spinner').hide();
         processInfo();
     });
 

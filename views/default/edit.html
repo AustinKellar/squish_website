@@ -7,6 +7,8 @@
     var getPlaytestsUrl = "{{=URL('api', 'get_playtests', user_signature=True)}}";
     var saveLogoUrl = "{{=URL('api', 'save_logo', user_signature=True)}}";
     var saveTrailerUrl = "{{=URL('api', 'save_trailer', user_signature=True)}}";
+    var getDescriptionUrl = "{{=URL('api', 'get_description', user_signature=True)}}";
+    var saveDescriptionUrl = "{{=URL('api', 'save_description', user_signature=True)}}";
     var saveScreenshotUrl = "{{=URL('api', 'save_screenshot', user_signature=True)}}";
     var deleteScreenshotUrl = "{{=URL('api', 'delete_screenshot', user_signature=True)}}";
     var savePlaytestUrl = "{{=URL('api', 'save_playtest', user_signature=True)}}";
@@ -26,6 +28,11 @@
     <img width="150" v-bind:src="screenshot"/><br>
     <input type="file" v-on:change="titleScreenshotChanged"/><br>
     <button v-on:click="saveTitleScreenshot">Save Title Screenshot</button>
+
+    <br><br>
+    <h2>Description</h2>
+    <textarea v-model="description"></textarea><br>
+    <button v-on:click="saveDescription">Save Description</button>
 
 
     <br><br>

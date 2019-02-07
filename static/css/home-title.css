@@ -1,12 +1,13 @@
 .title-container {
     background-size: cover;
+    background-position: center;
     clip-path: polygon(
         0 0,
         100% 0,
         100% 100%,
         0 calc(100% - 5vw)
     );
-    height: 95vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +16,6 @@
 .title-content {
     display: inline-block;
     padding: 10px 30px;
-    border-radius: 20px;
 }
 
 .title-header {
@@ -139,10 +139,11 @@
 
 @media only screen and (min-width: 350px) and (max-width: 449px) {
     .title-container {
-        height: 85vh;
+        height: 60vh;
     }
     .title-header {
         font-size: 100px;
+        text-shadow: 3px 3px black;
     }
 
     .logo {
@@ -156,11 +157,12 @@
 
 @media only screen and (max-width: 349px) {
     .title-container {
-        height: 85vh;
+        height: 60vh;
     }
     
     .title-header {
         font-size: 80px;
+        text-shadow: 3px 3px black;
     }
 
     .logo {
