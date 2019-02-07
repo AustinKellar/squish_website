@@ -5,6 +5,13 @@
     align-items: center;
 }
 
+.only-playtest {
+    height: 105vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .shift-up {
     transform: translateY(-5%);
 }
@@ -99,7 +106,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 15vw;
     font-family: 'Metal Mania', cursive;
     color: rgb(238, 238, 238);
 }
@@ -136,10 +142,396 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 48vw;
 }
 
 .playtest-tagline {
     font-style: italic;
     margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1250px) {
+    .playtest-date-container {
+        width: 15vw;
+    }
+
+    .playtest-image {
+        width: 35vw;
+        height: 26vw;
+    }
+
+    .playtest-text {
+        width: 48vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px) {
+
+    .playtest-container {
+        height: 90vh;
+    }
+    .playtest-date-container {
+        width: 22.5vw;
+    }
+
+    .playtest-image {
+        width: 52.5vw;
+        height: 37vw;
+    }
+
+    .playtest-text {
+        width: 72vw;
+    }
+
+    .playtest-date {
+        font-size: 4.5vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.3vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.3vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
+    .playtest-date-container {
+        width: 22.5vw;
+    }
+
+    .playtest-image {
+        width: 52.5vw;
+        height: 37vw;
+    }
+
+    .playtest-text {
+        width: 72vw;
+    }
+
+    .playtest-date {
+        font-size: 4.5vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.3vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.3vw;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (min-height: 1020px) {
+    .playtest-container {
+        height: 95vh;
+    }
+
+    .playtest-title {
+        font-size: 40px;
+    }
+
+    .playtest-date-container {
+        width: 22.5vw;
+    }
+
+    .playtest-image {
+        width: 52.5vw;
+        height: 37vw;
+    }
+
+    .playtest-text {
+        width: 72vw;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .playtest-date {
+        font-size: 4.5vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.3vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.3vw;
+    }
+
+    .playtest-tagline {
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (max-height: 1019px) {
+    .playtest-container {
+        height: 95vh;
+    }
+
+    .playtest-title {
+        font-size: 40px;
+    }
+
+    .playtest-date-container {
+        width: 22.5vw;
+    }
+
+    .playtest-image {
+        width: 52.5vw;
+        height: 37vw;
+    }
+
+    .playtest-text {
+        width: 72vw;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .playtest-date {
+        font-size: 4.5vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.3vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.3vw;
+    }
+
+    .playtest-tagline {
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 649px) {
+    .playtest-container {
+        height: 95vh;
+    }
+
+    .lengthened {
+        height: 105vh;
+    }
+    
+    .shortened {
+        height: 85vh;
+    }
+    
+    .shortened-slightly {
+        height: 90vh;
+    }
+
+    .playtest-title {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .playtest-date-container {
+        width: 22.5vw;
+    }
+
+    .playtest-image {
+        width: 52.5vw;
+        height: 37vw;
+    }
+
+    .playtest-text {
+        width: 72vw;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .playtest-date {
+        font-size: 4.5vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.3vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.3vw;
+    }
+
+    .playtest-tagline {
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 549px) {
+    .playtest-container {
+        height: 75vh;
+    }
+
+    .lengthened {
+        height: 85vh;
+    }
+    
+    .shortened {
+        height: 65vh;
+    }
+    
+    .shortened-slightly {
+        height: 70vh;
+    }
+
+    .playtest-title {
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+
+    .playtest-date-container {
+        width: 22.5vw;
+    }
+
+    .playtest-image {
+        width: 52.5vw;
+        height: 37vw;
+    }
+
+    .playtest-text {
+        width: 72vw;
+        font-size: 10px;
+        margin-top: 8px;
+    }
+
+    .playtest-date {
+        font-size: 4.5vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.3vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.3vw;
+    }
+
+    .playtest-tagline {
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .playtest-container {
+        height: 65vh;
+    }
+
+    .lengthened {
+        height: 75vh;
+    }
+    
+    .shortened {
+        height: 55vh;
+    }
+    
+    .shortened-slightly {
+        height: 60vh;
+    }
+
+    .playtest-title {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
+    .playtest-date-container {
+        width: 24.75vw;
+    }
+
+    .playtest-image {
+        width: 57.75vw;
+        height: 40.7vw;
+    }
+
+    .playtest-text {
+        width: 79.2vw;
+        font-size: 9.5px;
+        margin-top: 5px;
+    }
+
+    .playtest-date {
+        font-size: 4.95vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.63vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.63vw;
+    }
+
+    .playtest-tagline {
+        margin-bottom: 3px;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    .playtest-container {
+        height: 65vh;
+    }
+
+    .lengthened {
+        height: 75vh;
+    }
+    
+    .shortened {
+        height: 55vh;
+    }
+    
+    .shortened-slightly {
+        height: 60vh;
+    }
+
+    .playtest-title {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
+    .playtest-date-container {
+        width: 24.75vw;
+    }
+
+    .playtest-image {
+        width: 57.75vw;
+        height: 40.7vw;
+    }
+
+    .playtest-text {
+        width: 79.2vw;
+        font-size: 8px;
+        margin-top: 5px;
+    }
+
+    .playtest-date {
+        font-size: 4.95vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-time {
+        font-size: 3.63vw;
+        margin-bottom: 20px;
+    }
+    
+    .playtest-location {
+        font-size: 3.63vw;
+    }
+
+    .playtest-tagline {
+        margin-bottom: 3px;
+    }
 }
