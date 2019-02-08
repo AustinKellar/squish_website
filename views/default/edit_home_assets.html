@@ -1,0 +1,31 @@
+<div style="display: inline-block; border: 1px solid black; padding: 15px; margin: 10px; background-color: lightblue;">
+    <h2>Logo</h2>
+    <img width="150" v-bind:src="logo_src"/><br><br>
+    <input type="file" v-on:change="logoChanged"/><br>
+    <button v-on:click="saveLogo">Save Logo</button>
+</div>
+
+<br><br>
+<div style="display: inline-block; border: 1px solid black; padding: 15px; margin: 10px; background-color: lightblue;">
+    <h2>Title Screenshot</h2>
+    <img width="150" v-bind:src="screenshot"/><br>
+    <input type="file" v-on:change="titleScreenshotChanged"/><br>
+    <button v-on:click="saveTitleScreenshot">Save Title Screenshot</button>
+</div>
+
+<br><br>
+<div style="display: inline-block; border: 1px solid black; padding: 15px; margin: 10px; background-color: lightblue;">
+    <h2>Description</h2>
+    <textarea v-model="description"></textarea><br>
+    <button v-on:click="saveDescription">Save Description</button>
+</div>
+
+<br><br>
+<div style="display: inline-block; border: 1px solid black; padding: 15px; margin: 10px; background-color: lightblue;">
+    <h2>Gameplay Trailer</h2>
+    <p>Make sure that you use an embed link! It should be formated the same as the current url.</p>
+    <textarea v-model="trailerUrl"></textarea><br>
+    <button v-on:click="saveTrailer">Save Trailer Url</button>
+</div>
+
+<script src="{{=URL('static','js/edit_home.js')}}"></script>

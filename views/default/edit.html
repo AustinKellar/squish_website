@@ -18,74 +18,26 @@
 </script>
 
 <div id="edit">
-    <h2>Logo</h2>
-    <img width="150" v-bind:src="logo_src"/><br><br>
-    <input type="file" v-on:change="logoChanged"/><br>
-    <button v-on:click="saveLogo">Save Logo</button>
 
-    <br><br>
-    <h2>Title Screenshot</h2>
-    <img width="150" v-bind:src="screenshot"/><br>
-    <input type="file" v-on:change="titleScreenshotChanged"/><br>
-    <button v-on:click="saveTitleScreenshot">Save Title Screenshot</button>
+    <br><br><br>
+    <h1>Pages</h1>
+    <button v-on:click="changeRoute('home')"> Primary Home Page Assets</button>
+    <button v-on:click="changeRoute('media')">Media</button>
+    <button v-on:click="changeRoute('playtests')">Playtests</button>
 
-    <br><br>
-    <h2>Description</h2>
-    <textarea v-model="description"></textarea><br>
-    <button v-on:click="saveDescription">Save Description</button>
-
-
-    <br><br>
-    <h2>Gameplay Trailer</h2>
-    <p>Make sure that you use an embed link! It should be formated the same as the current url.</p>
-    <textarea v-model="trailerUrl"></textarea><br>
-    <button v-on:click="saveTrailer">Save Trailer Url</button>
-
-    <br><br>
-
-    <h2>Media</h2>
-    <div v-for="screenshot in screenshots">
-        <img v-bind:src="screenshot.img_src" width="150"/><br>
-        <label>Caption: </label>
-        <p v-if="screenshot.caption">${ screenshot.caption }</p>
-        <p v-if="!screenshot.caption"> No caption</p>
-        <br>
-        <button v-on:click="deleteScreenshot(screenshot.index)">Delete</button><br><br>
+    <br><br><br>
+    <div v-if="route == 'home'">
+        {{ include 'default/edit_home_assets.html' }}
     </div>
 
-    <br><br>
-    <h2>Add Media</h2>
-    <img v-bind:src="selectedScreenshot" width="150"/><br>
-    <input type="file" v-on:change="screenshotChanged"/><br><br>
-    <textarea v-model="caption" placeholder="Caption goes here"></textarea>
-    <button v-on:click="saveScreenshot">Save Screenshot</button>
-
-    <br><br>
-    <h2>Playtests</h2>
-    <div v-for="playtest in playtests">
-        <h4>${ playtest.title }</h4>
-        <img width="150" v-bind:src="playtest.image"/><br>
-        <button v-on:click="deletePlaytest(playtest.index)">Delete</button><br><br>
+    <div v-if="route == 'media'">
+        {{ include 'default/edit_media.html' }}
     </div>
 
-    <br><br>
-    <h2>Add Playtest</h2>
-    <label>Title</label>
-    <input v-model="playtestTitle"/><br><br>
-    <label>Image</label><br>
-    <img width="150" v-bind:src="playtestImage"/><br>
-    <input type="file" v-on:change="playtestChanged"/><br><br>
-    <label>Date</label>
-    <input v-model="playtestDate"/><br>
-    <label>Time</label>
-    <input v-model="playtestTime"/><br>
-    <label>Location</label>
-    <input v-model="playtestLocation"/><br>
-    <label>Tagline</label>
-    <textarea v-model="playtestTagline"></textarea><br>
-    <label>Description</label>
-    <textarea v-model="playtestDescription"></textarea><br><br>
-    <button v-on:click="savePlaytest">Save Playtest</button>
+    <div v-if="route == 'playtests'">
+        {{ include 'default/edit_playtests.html' }}
+    </div>
+
 </div>
 
 <script src="{{=URL('static','js/edit.js')}}"></script>
