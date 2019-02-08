@@ -1,0 +1,207 @@
+.media-container {
+    background-color: rgb(42, 42, 42);
+    width: 100%;
+    clip-path: polygon(
+        0 calc(0% + 5vw),
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px;
+}
+
+.media-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.media-header {
+    font-family: 'Metal Mania', cursive;
+    color: rgb(238, 238, 238);
+    text-align: center;
+}
+
+.media-picture {
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 20px;
+}
+
+.media-caption {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: rgba(88, 88, 88, 0.5);
+    display: inline-block;
+}
+
+@media only screen and (min-width: 1250px) {
+    .media-container {
+        height: 110vh;
+    }
+
+    .media-header {
+        font-size: 105px;
+    }
+
+    .carousel {
+        height: 35vw;
+    }
+
+    .carousel-item {
+        width: 60vw;
+        max-height: 35vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px) {
+    .media-container {
+        height: 70vh;
+    }
+
+    .media-header {
+        font-size: 105px;
+    }
+
+    .carousel {
+        height: 35vh;
+    }
+
+    .carousel-item {
+        width: 81vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
+    .media-container {
+        height: 100vh;
+    }
+
+    .media-header {
+        font-size: 85px;
+    }
+
+    .carousel {
+        height: 35vw;
+    }
+
+    .carousel-item {
+        width: 60vw;
+    }  
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (min-height: 1020px) {
+    .media-container {
+        height: 65vh;
+    }
+
+    .media-header {
+        font-size: 85px;
+    }
+
+    .carousel {
+        height: 45vw;
+    }
+
+    .carousel-item {
+        width: 81vw;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (max-height: 1019px) {
+    .media-container {
+        height: 100vh;
+    }
+
+    .media-header {
+        font-size: 55px;
+    }
+
+    .carousel {
+        height: 48vw;
+    }
+
+    .carousel-item {
+        width: 81vw;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 649px) {
+    .media-container {
+        height: 80vh;
+    }
+
+    .media-header {
+        font-size: 55px;
+    }
+
+    .carousel {
+        height: 50vw;
+    }
+
+    .carousel-item {
+        width: 81vw;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 549px) {
+    .media-container {
+        height: 60vh;
+    }
+
+    .media-header {
+        font-size: 55px;
+    }
+
+    .carousel {
+        height: 48vw;
+    }
+
+    .carousel-item {
+        width: 81vw;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .media-container {
+        height: 45vh;
+    }
+
+    .media-header {
+        font-size: 40px;
+    }
+
+    .carousel {
+        height: 51vw;
+    }
+
+    .carousel-item {
+        width: 81vw;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    .media-container {
+        height: 45vh;
+    }
+
+    .media-header {
+        font-size: 40px;
+    }
+
+    .carousel {
+        height: 51vw;
+    }
+
+    .carousel-item {
+        width: 81vw;
+    } 
+}

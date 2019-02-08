@@ -5,7 +5,7 @@ db.define_table('home_page_assets',
     Field('description', 'text')
 )
 
-db.define_table('home_page_screenshots', 
+db.define_table('home_page_media', 
     Field('img_src', 'text', requires=IS_LENGTH(1200000)),
     Field('caption')
 )

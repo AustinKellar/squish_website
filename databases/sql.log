@@ -93,3 +93,10 @@ success!
 timestamp: 2019-02-07T23:00:59.761000
 ALTER TABLE "home_page_screenshots" ADD "caption" CHAR(512);
 success!
+timestamp: 2019-02-08T04:57:57.697000
+CREATE TABLE "home_page_media"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "img_src" TEXT,
+    "caption" CHAR(512)
+);
+success!

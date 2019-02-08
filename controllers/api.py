@@ -39,14 +39,14 @@ def get_trailer_url():
         return response.json(dict(trailer_url=None))
 
 @auth.requires_signature()
-def get_screenshots():
-    home_page_screenshots = db(db.home_page_screenshots).select()
+def get_all_media():
+    home_page_media = db(db.home_page_media).select()
 
-    screenshots = []
-    for screenshot in home_page_screenshots:
-        screenshots.append(screenshot)
+    all_media = []
+    for media in home_page_media:
+        all_media.append(media)
 
-    return response.json(dict(screenshots=screenshots))
+    return response.json(dict(all_media=all_media))
 
 def get_playtests():
     playtests = db(db.playtests).select()
@@ -103,15 +103,15 @@ def save_trailer():
     return "success"
 
 @auth.requires_signature()
-def save_screenshot():
-    id = db.home_page_screenshots.insert(
-        img_src = request.vars.screenshot,
+def save_media():
+    id = db.home_page_media.insert(
+        img_src = request.vars.media,
         caption = request.vars.caption
     )
 
     return response.json(dict(id=id))
 
 @auth.requires_signature()
-def delete_screenshot():
-    db(db.home_page_screenshots.id == request.vars.id).delete()
+def delete_media():
+    db(db.home_page_media.id == request.vars.id).delete()
     return "success"

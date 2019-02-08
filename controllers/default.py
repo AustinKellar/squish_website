@@ -20,15 +20,15 @@ def index():
         title_screenshot = None
         description = home_page_assets.description
 
-    home_page_screenshots = db(db.home_page_screenshots).select()
+    home_page_media = db(db.home_page_media).select()
 
-    screenshots = []
-    for screenshot in home_page_screenshots:
-        screenshots.append(screenshot)
-        
-    random.shuffle(screenshots)
+    all_media = []
+    for media in home_page_media:
+        all_media.append(media)
 
-    return dict(logo=logo, title_screenshot=title_screenshot, description = description, trailer_url=trailer_url, screenshots=screenshots)
+    random.shuffle(all_media)
+
+    return dict(logo=logo, title_screenshot=title_screenshot, description = description, trailer_url=trailer_url, all_media=all_media)
 
 @auth.requires(auth.user_id == 1, requires_login=True)
 def edit():

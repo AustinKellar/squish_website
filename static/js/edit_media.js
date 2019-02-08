@@ -1,13 +1,13 @@
 var processMedia = function() {
     var i = 0;
-    editController.allMedia.map((screenshot) => {
-        screenshot.index = i++;
+    editController.allMedia.map((media) => {
+        media.index = i++;
     });
 };
 
 var getMediaData = function() {
-    $.getJSON(getScreenshotsUrl, (response) => {
-        editController.allMedia = response.screenshots;
+    $.getJSON(getAllMediaUrl, (response) => {
+        editController.allMedia = response.all_media;
         processMedia();
     });
 };
@@ -25,8 +25,8 @@ var mediaPictureChanged = function(event) {
 };
 
 var saveMedia = function() {
-    $.post(saveScreenshotUrl, {
-        screenshot: editController.mediaPicture,
+    $.post(saveMediaUrl, {
+        media: editController.mediaPicture,
         caption: editController.mediaCaption
     }, (response) => {
         editController.allMedia.push({
@@ -43,7 +43,7 @@ var saveMedia = function() {
 
 var deleteMedia = function(index) {
     var media = editController.allMedia[index];
-    $.post(deleteScreenshotUrl, {
+    $.post(deleteMediaUrl, {
         id: media.id
     }, (response) => {
         editController.allMedia.splice(index, 1);

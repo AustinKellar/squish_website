@@ -1,13 +1,6 @@
-<script>
-    var getLogoUrl = "{{=URL('api', 'get_logo')}}";
-    var getTrailerUrl = "{{=URL('api', 'get_trailer_url')}}";
-    var getScreenshotsUrl = "{{=URL('api', 'get_screenshots')}}";
-    var getScreenshotUrl = "{{=URL('api', 'get_screenshot')}}";
-</script>
-
 <link rel="stylesheet" href="{{=URL('static','css/home-title.css')}}" />
 <link rel="stylesheet" href="{{=URL('static','css/home-about.css')}}" />
-<link rel="stylesheet" href="{{=URL('static','css/home-screenshots.css')}}" />
+<link rel="stylesheet" href="{{=URL('static','css/home-media.css')}}" />
 
 <div v-if="route == 'home'">
     <div id="home-title-container" class="title-container" style="background-image: url({{=title_screenshot}})">
@@ -23,12 +16,12 @@
         </div>
     </div>
 
-    <div class="screenshots-container">
-        <div class="screenshots-content">
-            <h1 class="screenshots-header">Media</h1>
+    <div class="media-container">
+        <div class="media-content">
+            <h1 class="media-header">Media</h1>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    {{ for index, _ in enumerate(screenshots): }}
+                    {{ for index, _ in enumerate(all_media): }}
                         {{ if index == 0: }}
                             <li data-target="#carouselExampleIndicators" data-slide-to="{{ = index }}" class="active"></li>
                         {{ else: }}
@@ -37,22 +30,22 @@
                     {{ pass }}
                 </ol>
                 <div class="carousel-inner">
-                    {{ for index, screenshot in enumerate(screenshots): }}
+                    {{ for index, media in enumerate(all_media): }}
                         {{ if index == 0: }}
                             <div class="carousel-item active">
-                                <img class="screenshot d-block w-100" src="{{ = screenshot.img_src }}">
-                                {{ if screenshot.caption: }}
+                                <img class="media-picture d-block w-100" src="{{ = media.img_src }}">
+                                {{ if media.caption: }}
                                     <div class="carousel-caption d-none d-md-block">
-                                        <p class="media-caption">{{ = screenshot.caption }}</p>
+                                        <p class="media-caption">{{ = media.caption }}</p>
                                     </div>
                                 {{ pass }}
                             </div>
                         {{ else: }}
                             <div class="carousel-item">
-                                <img class="screenshot d-block w-100" src="{{ = screenshot.img_src }}">
-                                {{ if screenshot.caption: }}
+                                <img class="media-picture d-block w-100" src="{{ = media.img_src }}">
+                                {{ if media.caption: }}
                                     <div class="carousel-caption d-none d-md-block">
-                                        <p class="media-caption">{{ = screenshot.caption }}</p>
+                                        <p class="media-caption">{{ = media.caption }}</p>
                                     </div>
                                 {{ pass }}
                             </div>
