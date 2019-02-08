@@ -31,6 +31,18 @@
     border-radius: 10px;
 }
 
+.carousel-caption {
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 20px;
+}
+
+.media-caption {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: rgba(88, 88, 88, 0.5);
+    display: inline-block;
+}
+
 @media only screen and (min-width: 1250px) {
     .screenshots-container {
         height: 110vh;

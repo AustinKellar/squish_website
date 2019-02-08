@@ -46,6 +46,10 @@
     <h2>Media</h2>
     <div v-for="screenshot in screenshots">
         <img v-bind:src="screenshot.img_src" width="150"/><br>
+        <label>Caption: </label>
+        <p v-if="screenshot.caption">${ screenshot.caption }</p>
+        <p v-if="!screenshot.caption"> No caption</p>
+        <br>
         <button v-on:click="deleteScreenshot(screenshot.index)">Delete</button><br><br>
     </div>
 
@@ -53,6 +57,7 @@
     <h2>Add Media</h2>
     <img v-bind:src="selectedScreenshot" width="150"/><br>
     <input type="file" v-on:change="screenshotChanged"/><br><br>
+    <textarea v-model="caption" placeholder="Caption goes here"></textarea>
     <button v-on:click="saveScreenshot">Save Screenshot</button>
 
     <br><br>

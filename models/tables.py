@@ -6,7 +6,8 @@ db.define_table('home_page_assets',
 )
 
 db.define_table('home_page_screenshots', 
-    Field('img_src', 'text', requires=IS_LENGTH(1200000))
+    Field('img_src', 'text', requires=IS_LENGTH(1200000)),
+    Field('caption')
 )
 
 db.define_table('playtests',

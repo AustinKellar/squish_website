@@ -90,3 +90,6 @@ success!
 timestamp: 2019-02-07T04:20:28.431000
 ALTER TABLE "home_page_assets" ADD "description" TEXT;
 success!
+timestamp: 2019-02-07T23:00:59.761000
+ALTER TABLE "home_page_screenshots" ADD "caption" CHAR(512);
+success!

@@ -5,6 +5,8 @@
 # -------------------------------------------------------------------------
 
 # ---- example index page ----
+import random
+
 def index():
     home_page_assets = db(db.home_page_assets).select().first()
     if home_page_assets:
@@ -22,7 +24,9 @@ def index():
 
     screenshots = []
     for screenshot in home_page_screenshots:
-        screenshots.append(screenshot.img_src)
+        screenshots.append(screenshot)
+        
+    random.shuffle(screenshots)
 
     return dict(logo=logo, title_screenshot=title_screenshot, description = description, trailer_url=trailer_url, screenshots=screenshots)
 

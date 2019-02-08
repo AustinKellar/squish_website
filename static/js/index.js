@@ -16,8 +16,6 @@ var onPageLoad = function() {
         $('#spinner').hide();
         processInfo();
     });
-
-
 };
 
 var setRoute = function(route) {
@@ -26,6 +24,15 @@ var setRoute = function(route) {
     if (route != 'home') {
         $('#nav-collapse').click();
     }
+};
+
+var showSpinner = function(time) {
+    $('#app-content').hide();
+    $('#spinner').show();
+    setTimeout(() => {
+        $('#app-content').show();
+        $('#spinner').hide();
+    }, time);
 };
 
 var openImage = function(url) {
@@ -44,7 +51,8 @@ var app = new Vue({
     },
     methods: {
         setRoute: setRoute,
-        openImage: openImage
+        openImage: openImage,
+        showSpinner: showSpinner
     }
 });
 

@@ -105,7 +105,8 @@ def save_trailer():
 @auth.requires_signature()
 def save_screenshot():
     id = db.home_page_screenshots.insert(
-        img_src = request.vars.screenshot
+        img_src = request.vars.screenshot,
+        caption = request.vars.caption
     )
 
     return response.json(dict(id=id))

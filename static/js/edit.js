@@ -113,11 +113,17 @@ var screenshotChanged = function(event) {
 
 var saveScreenshot = function() {
     $.post(saveScreenshotUrl, {
-        screenshot: editController.selectedScreenshot
+        screenshot: editController.selectedScreenshot,
+        caption: editController.caption
     }, (response) => {
-        editController.screenshots.push({img_src: editController.selectedScreenshot, id: response.id});
+        editController.screenshots.push({
+            img_src: editController.selectedScreenshot, 
+            caption: editController.caption, 
+            id: response.id
+        });
         processData();
         editController.selectedScreenshot = undefined;
+        editController.caption = undefined;
         alert('Success!');
     });
 };
@@ -181,6 +187,7 @@ var editController = new Vue({
         logo_src: undefined,
         description: undefined,
         screenshot: undefined,
+        caption: undefined,
         trailerUrl: undefined,
         screenshots: [],
         selectedScreenshot: undefined,
