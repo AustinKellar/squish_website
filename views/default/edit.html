@@ -24,16 +24,20 @@
     <button v-on:click="changeRoute('media')">Media</button>
     <button v-on:click="changeRoute('playtests')">Playtests</button>
 
+    <div v-if="showSpinner" style="height: 60vh; width: 100%; display: flex; justify-content: center; align-items: center; color: black; font-size: 80px;">
+        <i class="fa fa-spinner fa-spin spinner"></i>
+    </div>
+
     <br><br><br>
-    <div v-if="route == 'home'">
+    <div v-if="route == 'home' && !showSpinner">
         {{ include 'default/edit_home_assets.html' }}
     </div>
 
-    <div v-if="route == 'media'">
+    <div v-if="route == 'media' && !showSpinner">
         {{ include 'default/edit_media.html' }}
     </div>
 
-    <div v-if="route == 'playtests'">
+    <div v-if="route == 'playtests' && !showSpinner">
         {{ include 'default/edit_playtests.html' }}
     </div>
 

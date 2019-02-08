@@ -22,11 +22,12 @@ var logoChanged = function(event) {
 };
 
 var saveLogo = function() {
+    editController.showSpinner = true;
     $.post(saveLogoUrl, {
         id: editController.homePageAssets.id,
         logo: editController.logo
     }, (response) => {
-        alert('Success!');
+        editController.showSpinner = false;
     });
 };
 
@@ -43,29 +44,32 @@ var titleScreenshotChanged = function(event) {
 };
 
 var saveTitleScreenshot = function(event) {
+    editController.showSpinner = true;
     $.post(saveTitleScreenshotUrl, {
         id: editController.homePageAssets.id,
         screenshot: editController.titleScreenshot
     }, (response) => {
-        alert('Success!');
+        editController.showSpinner = false;
     })
 };
 
 var saveDescription = function() {
+    editController.showSpinner = true;
     $.post(saveDescriptionUrl, {
         id: editController.homePageAssets.id,
         description: editController.description
     }, (response) => {
-        alert('Success!');
+        editController.showSpinner = false;
     });
 }
 
 var saveTrailer = function() {
+    editController.showSpinner = true;
     $.post(saveTrailerUrl, {
         id: editController.homePageAssets.id,
         trailer_url: editController.trailerUrl
     }, (response) => {
-        alert('Success!');
+        editController.showSpinner = false;
     });
 };
 

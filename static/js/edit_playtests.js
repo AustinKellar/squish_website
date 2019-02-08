@@ -25,6 +25,7 @@ var playtestChanged = function(event) {
 };
 
 var savePlaytest = function() {
+    editController.showSpinner = true;
     var newPlaytest = {
         title: editController.playtestTitle,
         image: editController.playtestImage,
@@ -38,16 +39,17 @@ var savePlaytest = function() {
         newPlaytest.id = response.id;
         editController.playtests.unshift(newPlaytest);
         processPlaytests();
-        alert('Success!');
+        editController.showSpinner = false;
     });
 };
 
 var deletePlaytest = function(index) {
+    editController.showSpinner = true;
     var playtest = editController.playtests[index];
     $.post(deletePlaytestUrl, { id: playtest.id }, (response) => {
         editController.playtests.splice(index, 1);
         processPlaytests();
-        alert('Success!');
+        editController.showSpinner = false;
     });
 };
 

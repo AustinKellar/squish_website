@@ -30,7 +30,8 @@ var editController = new Vue({
         playtestDescription: undefined,
 
         // general
-        route: 'home'
+        route: 'home',
+        showSpinner: true
     },
     methods: {
         // home assets

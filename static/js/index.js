@@ -14,6 +14,7 @@ var onPageLoad = function() {
         app.playtests = response.playtests;
         $('#app-content').show();
         $('#spinner').hide();
+        window.scrollTo(0, 0);
         processInfo();
     });
 };
@@ -22,6 +23,7 @@ var setRoute = function(route) {
     app.route = route;
 
     if (route != 'home') {
+        window.scrollTo(0, 0);
         $('#nav-collapse').click();
     }
 };

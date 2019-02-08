@@ -9,6 +9,7 @@ var getMediaData = function() {
     $.getJSON(getAllMediaUrl, (response) => {
         editController.allMedia = response.all_media;
         processMedia();
+        editController.showSpinner = false;
     });
 };
 
@@ -25,6 +26,7 @@ var mediaPictureChanged = function(event) {
 };
 
 var saveMedia = function() {
+    editController.showSpinner = true;
     $.post(saveMediaUrl, {
         media: editController.mediaPicture,
         caption: editController.mediaCaption
@@ -37,18 +39,19 @@ var saveMedia = function() {
         processMedia();
         editController.mediaPicture = undefined;
         editController.mediaCaption = undefined;
-        alert('Success!');
+        editController.showSpinner = false;
     });
 };
 
 var deleteMedia = function(index) {
+    editController.showSpinner = true;
     var media = editController.allMedia[index];
     $.post(deleteMediaUrl, {
         id: media.id
     }, (response) => {
         editController.allMedia.splice(index, 1);
         processMedia();
-        alert('success!');
+        editController.showSpinner = false;
     });
 };
 
