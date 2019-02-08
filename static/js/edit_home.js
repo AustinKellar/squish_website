@@ -5,8 +5,8 @@ var retrieveHomeData = function() {
         editController.logo_src = response.logo.logo
     });
 
-    $.getJSON(getScreenshotUrl, (response) => {
-        editController.screenshot = response.screenshot;
+    $.getJSON(getTitleScreenshotUrl, (response) => {
+        editController.titleScreenshot = response.title_screenshot;
     });
 
     $.getJSON(getTrailerUrl, (response) => {
@@ -46,7 +46,7 @@ var titleScreenshotChanged = function(event) {
     if (file) {
         var reader = new FileReader();
         reader.addEventListener('load', () => {
-            editController.screenshot = reader.result;
+            editController.titleScreenshot = reader.result;
         }, false);
         reader.readAsDataURL(file);
     }
@@ -55,7 +55,7 @@ var titleScreenshotChanged = function(event) {
 var saveTitleScreenshot = function(event) {
     $.post(saveTitleScreenshotUrl, {
         id: editController.logo.id,
-        screenshot: editController.screenshot
+        screenshot: editController.titleScreenshot
     }, (response) => {
         alert('Success!');
     })

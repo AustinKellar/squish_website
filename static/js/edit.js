@@ -11,7 +11,7 @@ var editController = new Vue({
         logo: undefined,
         logo_src: undefined,
         description: undefined,
-        screenshot: undefined,
+        titleScreenshot: undefined,
         trailerUrl: undefined,
 
         // media

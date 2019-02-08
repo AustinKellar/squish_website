@@ -1,3 +1,5 @@
+
+# home page assets
 @auth.requires_signature()
 def get_logo():
     home_page_assets = db(db.home_page_assets).select().first()
@@ -6,12 +8,30 @@ def get_logo():
     else:
         return response.json(dict(logo=None))
 
-def get_screenshot():
+@auth.requires_signature()
+def save_logo():
+    db.home_page_assets.update_or_insert(
+        db.home_page_assets.id == request.vars.id,
+        logo = request.vars.logo
+    )
+
+    return "success"
+
+def get_title_screenshot():
     home_page_assets = db(db.home_page_assets).select().first()
     if home_page_assets:
-        return response.json(dict(screenshot=home_page_assets.screenshot))
+        return response.json(dict(title_screenshot=home_page_assets.screenshot))
     else:
-        return response.json(dict(screenshot=None))
+        return response.json(dict(title_screenshot=None))
+
+@auth.requires_signature()
+def save_title_screenshot():
+    db.home_page_assets.update_or_insert(
+        db.home_page_assets.id == request.vars.id,
+        screenshot = request.vars.screenshot
+    )
+
+    return "success"  
 
 @auth.requires_signature()
 def get_description():
@@ -39,6 +59,18 @@ def get_trailer_url():
         return response.json(dict(trailer_url=None))
 
 @auth.requires_signature()
+def save_trailer():
+    db.home_page_assets.update_or_insert(
+        db.home_page_assets.id == request.vars.id,
+        trailer_url = request.vars.trailer_url
+    )
+
+    return "success"
+
+
+# media
+
+@auth.requires_signature()
 def get_all_media():
     home_page_media = db(db.home_page_media).select()
 
@@ -48,8 +80,25 @@ def get_all_media():
 
     return response.json(dict(all_media=all_media))
 
+@auth.requires_signature()
+def save_media():
+    id = db.home_page_media.insert(
+        img_src = request.vars.media,
+        caption = request.vars.caption
+    )
+
+    return response.json(dict(id=id))
+
+@auth.requires_signature()
+def delete_media():
+    db(db.home_page_media.id == request.vars.id).delete()
+    return "success"
+
+
+# playtests
+
 def get_playtests():
-    playtests = db(db.playtests).select()
+    playtests = db(db.playtests).select(orderby=~db.playtests.id)
     if (playtests):
         return response.json(dict(playtests=playtests))
     else:
@@ -73,45 +122,4 @@ def save_playtest():
 def delete_playtest():
     db(db.playtests.id == request.vars.id).delete()
 
-    return "success"
-
-@auth.requires_signature()
-def save_logo():
-    db.home_page_assets.update_or_insert(
-        db.home_page_assets.id == request.vars.id,
-        logo = request.vars.logo
-    )
-
-    return "success"
-
-@auth.requires_signature()
-def save_title_screenshot():
-    db.home_page_assets.update_or_insert(
-        db.home_page_assets.id == request.vars.id,
-        screenshot = request.vars.screenshot
-    )
-
-    return "success"   
-
-@auth.requires_signature()
-def save_trailer():
-    db.home_page_assets.update_or_insert(
-        db.home_page_assets.id == request.vars.id,
-        trailer_url = request.vars.trailer_url
-    )
-
-    return "success"
-
-@auth.requires_signature()
-def save_media():
-    id = db.home_page_media.insert(
-        img_src = request.vars.media,
-        caption = request.vars.caption
-    )
-
-    return response.json(dict(id=id))
-
-@auth.requires_signature()
-def delete_media():
-    db(db.home_page_media.id == request.vars.id).delete()
-    return "success"
+    return "success" 
