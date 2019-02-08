@@ -37,7 +37,7 @@ var savePlaytest = function() {
     $.post(savePlaytestUrl, newPlaytest, (response) => {
         newPlaytest.id = response.id;
         editController.playtests.unshift(newPlaytest);
-        processData();
+        processPlaytests();
         alert('Success!');
     });
 };
@@ -46,7 +46,7 @@ var deletePlaytest = function(index) {
     var playtest = editController.playtests[index];
     $.post(deletePlaytestUrl, { id: playtest.id }, (response) => {
         editController.playtests.splice(index, 1);
-        processData();
+        processPlaytests();
         alert('Success!');
     });
 };

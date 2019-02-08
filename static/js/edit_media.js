@@ -1,53 +1,53 @@
 var processMedia = function() {
     var i = 0;
-    editController.screenshots.map((screenshot) => {
+    editController.allMedia.map((screenshot) => {
         screenshot.index = i++;
     });
 };
 
 var getMediaData = function() {
     $.getJSON(getScreenshotsUrl, (response) => {
-        editController.screenshots = response.screenshots;
+        editController.allMedia = response.screenshots;
         processMedia();
     });
 };
 
-var screenshotChanged = function(event) {
+var mediaPictureChanged = function(event) {
     var input = event.target;
     var file = input.files[0];
     if (file) {
         var reader = new FileReader();
         reader.addEventListener('load', () => {
-            editController.selectedScreenshot = reader.result
+            editController.mediaPicture = reader.result
         }, false);
         reader.readAsDataURL(file);
     }
 };
 
-var saveScreenshot = function() {
+var saveMedia = function() {
     $.post(saveScreenshotUrl, {
-        screenshot: editController.selectedScreenshot,
-        caption: editController.caption
+        screenshot: editController.mediaPicture,
+        caption: editController.mediaCaption
     }, (response) => {
-        editController.screenshots.push({
-            img_src: editController.selectedScreenshot, 
-            caption: editController.caption, 
+        editController.allMedia.push({
+            img_src: editController.mediaPicture, 
+            caption: editController.mediaCaption, 
             id: response.id
         });
-        processData();
-        editController.selectedScreenshot = undefined;
-        editController.caption = undefined;
+        processMedia();
+        editController.mediaPicture = undefined;
+        editController.mediaCaption = undefined;
         alert('Success!');
     });
 };
 
-var deleteScreenshot = function(index) {
-    var screenshot = editController.screenshots[index];
+var deleteMedia = function(index) {
+    var media = editController.allMedia[index];
     $.post(deleteScreenshotUrl, {
-        id: screenshot.id
+        id: media.id
     }, (response) => {
-        editController.screenshots.splice(index, 1);
-        processData();
+        editController.allMedia.splice(index, 1);
+        processMedia();
         alert('success!');
     });
 };

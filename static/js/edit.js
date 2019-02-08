@@ -15,9 +15,9 @@ var editController = new Vue({
         trailerUrl: undefined,
 
         // media
-        screenshots: [],
-        caption: undefined,
-        selectedScreenshot: undefined,
+        allMedia: [],
+        mediaCaption: undefined,
+        mediaPicture: undefined,
 
         // playtests
         playtests: [],
@@ -42,8 +42,9 @@ var editController = new Vue({
         saveDescription: saveDescription,
 
         // media
-        saveScreenshot: saveScreenshot,
-        deleteScreenshot: deleteScreenshot,
+        saveMedia: saveMedia,
+        deleteMedia: deleteMedia,
+        mediaPictureChanged: mediaPictureChanged,
 
         // playtests
         savePlaytest: savePlaytest,
