@@ -10,10 +10,12 @@
     var getAllMediaUrl = "{{=URL('api', 'get_all_media', user_signature=True)}}";
     var saveMediaUrl = "{{=URL('api', 'save_media', user_signature=True)}}";
     var deleteMediaUrl = "{{=URL('api', 'delete_media', user_signature=True)}}";
+    var updateMediaUrl = "{{=URL('api', 'update_media', user_signature=True)}}";
     
     var getPlaytestsUrl = "{{=URL('api', 'get_playtests', user_signature=True)}}";
     var savePlaytestUrl = "{{=URL('api', 'save_playtest', user_signature=True)}}";
     var deletePlaytestUrl = "{{=URL('api', 'delete_playtest', user_signature=True)}}";
+    var updatePlaytestUrl = "{{=URL('api', 'update_playtest', user_signature=True)}}";
 </script>
 
 <div id="edit">
@@ -37,7 +39,7 @@
         {{ include 'default/edit_media.html' }}
     </div>
 
-    <div v-if="route == 'playtests' && !showSpinner">
+    <div v-if="(route == 'playtests' || route == 'updatePlaytest') && !showSpinner">
         {{ include 'default/edit_playtests.html' }}
     </div>
 

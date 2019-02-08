@@ -68,6 +68,15 @@ def delete_media():
     db(db.home_page_media.id == request.vars.id).delete()
     return "success"
 
+@auth.requires_signature()
+def update_media():
+    db(db.home_page_media.id == request.vars.id).update(
+        img_src = request.vars.media,
+        caption = request.vars.caption
+    )
+
+    return "success"
+
 
 # playtests
 
@@ -97,3 +106,17 @@ def delete_playtest():
     db(db.playtests.id == request.vars.id).delete()
 
     return "success" 
+
+@auth.requires_signature()
+def update_playtest():
+    db(db.playtests.id == request.vars.id).update(
+        title = request.vars.title,
+        image = request.vars.image,
+        playtest_date = request.vars.playtest_date,
+        playtest_time = request.vars.playtest_time,
+        playtest_location = request.vars.playtest_location,
+        tagline = request.vars.tagline,
+        description = request.vars.description
+    )
+
+    return "success"

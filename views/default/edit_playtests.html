@@ -1,29 +1,52 @@
-<br><br>
-<h2>Playtests</h2>
-<div v-for="playtest in playtests" style="display: inline-block; border: 1px solid black; padding: 15px; margin: 10px; background-color: lightblue;">
-    <h4>${ playtest.title }</h4>
-    <img width="150" v-bind:src="playtest.image"/><br>
-    <button v-on:click="deletePlaytest(playtest.index)">Delete</button><br><br>
+<div v-if="route == 'playtests'">
+    <br><br>
+    <h2>Playtests</h2>
+    <div v-for="playtest in playtests" style="display: inline-block; border: 1px solid black; padding: 15px; margin: 10px; background-color: lightblue;">
+        <h4>${ playtest.title }</h4>
+        <img width="150" v-bind:src="playtest.image"/><br>
+        <button v-on:click="changeRoute('updatePlaytest'); updatedPlaytest = playtest;">Edit this Playtest</button>
+        <button v-on:click="deletePlaytest(playtest.index)">Delete</button><br><br>
+    </div>
+
+    <br><br>
+    <h2>Add Playtest</h2>
+    <label>Title</label>
+    <input v-model="playtestTitle"/><br><br>
+    <label>Image</label><br>
+    <img width="150" v-bind:src="playtestImage"/><br>
+    <input type="file" v-on:change="playtestChanged"/><br><br>
+    <label>Date</label>
+    <input v-model="playtestDate"/><br>
+    <label>Time</label>
+    <input v-model="playtestTime"/><br>
+    <label>Location</label>
+    <input v-model="playtestLocation"/><br>
+    <label>Tagline</label>
+    <textarea v-model="playtestTagline"></textarea><br>
+    <label>Description</label>
+    <textarea v-model="playtestDescription"></textarea><br><br>
+    <button v-on:click="savePlaytest">Save Playtest</button>
 </div>
 
-<br><br>
-<h2>Add Playtest</h2>
-<label>Title</label>
-<input v-model="playtestTitle"/><br><br>
-<label>Image</label><br>
-<img width="150" v-bind:src="playtestImage"/><br>
-<input type="file" v-on:change="playtestChanged"/><br><br>
-<label>Date</label>
-<input v-model="playtestDate"/><br>
-<label>Time</label>
-<input v-model="playtestTime"/><br>
-<label>Location</label>
-<input v-model="playtestLocation"/><br>
-<label>Tagline</label>
-<textarea v-model="playtestTagline"></textarea><br>
-<label>Description</label>
-<textarea v-model="playtestDescription"></textarea><br><br>
-<button v-on:click="savePlaytest">Save Playtest</button>
+<div v-if="route == 'updatePlaytest'">
+    <h2>Update Playtest</h2>
+    <label>Title</label>
+    <input v-model="updatedPlaytest.title"/><br><br>
+    <label>Image</label><br>
+    <img width="150" v-bind:src="updatedPlaytest.image"/><br>
+    <input type="file" v-on:change="updatedPlaytestChanged"/><br><br>
+    <label>Date</label>
+    <input v-model="updatedPlaytest.playtest_date"/><br>
+    <label>Time</label>
+    <input v-model="updatedPlaytest.playtest_time"/><br>
+    <label>Location</label>
+    <input v-model="updatedPlaytest.playtest_location"/><br>
+    <label>Tagline</label>
+    <textarea v-model="updatedPlaytest.tagline"></textarea><br>
+    <label>Description</label>
+    <textarea v-model="updatedPlaytest.description"></textarea><br><br>
+    <button v-on:click="updatePlaytest">Update Playtest</button>
+</div>
 
 
 <script src="{{=URL('static','js/edit_playtests.js')}}"></script>

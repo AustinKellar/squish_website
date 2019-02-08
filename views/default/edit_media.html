@@ -2,10 +2,11 @@
 <h2>Media</h2>
 <div v-for="media in allMedia" style="display: inline-block; border: 1px solid black; padding: 15px; margin: 10px; background-color: lightblue;">
     <img v-bind:src="media.img_src" width="150"/><br>
-    <label>Caption: </label>
-    <p v-if="media.caption">${ media.caption }</p>
-    <p v-if="!media.caption"> No caption</p>
+    <input type="file" v-on:change="specificMediaChanged(media.index, $event);"/>
+    <label>Caption: </label><br>
+    <textarea v-model="media.caption"></textarea>
     <br>
+    <button v-on:click="updateMedia(media.index)">Update</button>
     <button v-on:click="deleteMedia(media.index)">Delete</button><br><br>
 </div>
 

@@ -28,6 +28,7 @@ var editController = new Vue({
         playtestLocation: undefined,
         playtestTagline: undefined,
         playtestDescription: undefined,
+        updatedPlaytest: undefined,
 
         // general
         route: 'home',
@@ -35,21 +36,26 @@ var editController = new Vue({
     },
     methods: {
         // home assets
-        logoChanged: logoChanged,
-        saveLogo: saveLogo,
-        saveTrailer: saveTrailer,
-        titleScreenshotChanged: titleScreenshotChanged,
-        saveTitleScreenshot: saveTitleScreenshot,
-        saveDescription: saveDescription,
+        logoChanged: undefined,
+        saveLogo: undefined,
+        saveTrailer: undefined,
+        titleScreenshotChanged: undefined,
+        saveTitleScreenshot: undefined,
+        saveDescription: undefined,
 
         // media
-        saveMedia: saveMedia,
-        deleteMedia: deleteMedia,
-        mediaPictureChanged: mediaPictureChanged,
+        saveMedia: undefined,
+        deleteMedia: undefined,
+        mediaPictureChanged: undefined,
+        specificMediaChanged: undefined,
+        updateMedia: undefined,
 
         // playtests
-        savePlaytest: savePlaytest,
-        deletePlaytest: deletePlaytest,
+        savePlaytest: undefined,
+        deletePlaytest: undefined,
+        playtestChanged: undefined,
+        updatePlaytest: undefined,
+        updatedPlaytestChanged: undefined,
 
         // general
         changeRoute: changeRoute
