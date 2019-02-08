@@ -1,20 +1,11 @@
 
 var retrieveHomeData = function() {
-    $.getJSON(getLogoUrl, (response) => {
-        editController.logo = response.logo;
-        editController.logo_src = response.logo.logo
-    });
-
-    $.getJSON(getTitleScreenshotUrl, (response) => {
-        editController.titleScreenshot = response.title_screenshot;
-    });
-
-    $.getJSON(getTrailerUrl, (response) => {
-        editController.trailerUrl = response.trailer_url;
-    });
-
-    $.getJSON(getDescriptionUrl, (response) => {
-        editController.description = response.description;
+    $.getJSON(getHomePageAssetsUrl, (response) => {
+        editController.homePageAssets = response.home_page_assets;
+        editController.logo = response.home_page_assets.logo;
+        editController.titleScreenshot = response.home_page_assets.screenshot;
+        editController.trailerUrl = response.home_page_assets.trailer_url;
+        editController.description = response.home_page_assets.description;
     });
 };
 
@@ -24,8 +15,7 @@ var logoChanged = function(event) {
     if (file) {
         var reader = new FileReader();
         reader.addEventListener('load', () => {
-            editController.logo.logo = reader.result;
-            editController.logo_src = reader.result
+            editController.logo = reader.result
         }, false);
         reader.readAsDataURL(file);
     }
@@ -33,8 +23,8 @@ var logoChanged = function(event) {
 
 var saveLogo = function() {
     $.post(saveLogoUrl, {
-        id: editController.logo.id,
-        logo: editController.logo.logo
+        id: editController.homePageAssets.id,
+        logo: editController.logo
     }, (response) => {
         alert('Success!');
     });
@@ -54,7 +44,7 @@ var titleScreenshotChanged = function(event) {
 
 var saveTitleScreenshot = function(event) {
     $.post(saveTitleScreenshotUrl, {
-        id: editController.logo.id,
+        id: editController.homePageAssets.id,
         screenshot: editController.titleScreenshot
     }, (response) => {
         alert('Success!');
@@ -63,7 +53,7 @@ var saveTitleScreenshot = function(event) {
 
 var saveDescription = function() {
     $.post(saveDescriptionUrl, {
-        id: editController.logo.id,
+        id: editController.homePageAssets.id,
         description: editController.description
     }, (response) => {
         alert('Success!');
@@ -72,7 +62,7 @@ var saveDescription = function() {
 
 var saveTrailer = function() {
     $.post(saveTrailerUrl, {
-        id: editController.logo.id,
+        id: editController.homePageAssets.id,
         trailer_url: editController.trailerUrl
     }, (response) => {
         alert('Success!');

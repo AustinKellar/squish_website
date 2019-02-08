@@ -1,13 +1,10 @@
 {{extend 'layout.html'}}
 
 <script>
-    var getLogoUrl = "{{=URL('api', 'get_logo', user_signature=True)}}";
+    var getHomePageAssetsUrl = "{{=URL('api', 'get_home_page_assets', user_signature=True)}}";
     var saveLogoUrl = "{{=URL('api', 'save_logo', user_signature=True)}}";
-    var getTrailerUrl = "{{=URL('api', 'get_trailer_url', user_signature=True)}}";
     var saveTrailerUrl = "{{=URL('api', 'save_trailer', user_signature=True)}}";
-    var getDescriptionUrl = "{{=URL('api', 'get_description', user_signature=True)}}";
     var saveDescriptionUrl = "{{=URL('api', 'save_description', user_signature=True)}}";
-    var getTitleScreenshotUrl = "{{=URL('api', 'get_title_screenshot', user_signature=True)}}";
     var saveTitleScreenshotUrl = "{{=URL('api', 'save_title_screenshot', user_signature=True)}}";
 
     var getAllMediaUrl = "{{=URL('api', 'get_all_media', user_signature=True)}}";

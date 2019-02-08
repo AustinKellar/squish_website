@@ -8,8 +8,8 @@ var editController = new Vue({
     unsafeDelimiters: ['!{', '}'],
     data: {
         // home assets
+        homePageAssets: undefined,
         logo: undefined,
-        logo_src: undefined,
         description: undefined,
         titleScreenshot: undefined,
         trailerUrl: undefined,
