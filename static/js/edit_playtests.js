@@ -45,13 +45,15 @@ setTimeout(() => {
     };
     
     editController.deletePlaytest = function(index) {
-        editController.showSpinner = true;
-        var playtest = editController.playtests[index];
-        $.post(deletePlaytestUrl, { id: playtest.id }, (response) => {
-            editController.playtests.splice(index, 1);
-            processPlaytests();
-            editController.showSpinner = false;
-        });
+        if (confirm('Are you sure you want to delete this playtest?')) {
+            editController.showSpinner = true;
+            var playtest = editController.playtests[index];
+            $.post(deletePlaytestUrl, { id: playtest.id }, (response) => {
+                editController.playtests.splice(index, 1);
+                processPlaytests();
+                editController.showSpinner = false;
+            });
+        }
     };
 
     editController.updatedPlaytestChanged = function(event) {
@@ -67,21 +69,23 @@ setTimeout(() => {
     };
 
     editController.updatePlaytest = function() {
-        editController.showSpinner = true;
-        var playtest = editController.updatedPlaytest;
-        $.post(updatePlaytestUrl, {
-            id: playtest.id,
-            title: playtest.title,
-            image: playtest.image,
-            playtest_date: playtest.playtest_date,
-            playtest_time: playtest.playtest_time,
-            playtest_location: playtest.playtest_location,
-            tagline: playtest.tagline,
-            description: playtest.description
-        }, (response) => {
-            processPlaytests();
-            editController.showSpinner = false;
-        });
+        if (confirm('Are you sure you want to change this playtest?')) {
+            editController.showSpinner = true;
+            var playtest = editController.updatedPlaytest;
+            $.post(updatePlaytestUrl, {
+                id: playtest.id,
+                title: playtest.title,
+                image: playtest.image,
+                playtest_date: playtest.playtest_date,
+                playtest_time: playtest.playtest_time,
+                playtest_location: playtest.playtest_location,
+                tagline: playtest.tagline,
+                description: playtest.description
+            }, (response) => {
+                processPlaytests();
+                editController.showSpinner = false;
+            });
+        }
     };
 
     retrievePlaytestData();

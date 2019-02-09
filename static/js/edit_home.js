@@ -23,13 +23,15 @@ setTimeout(() => {
     };
     
     editController.saveLogo = function() {
-        editController.showSpinner = true;
-        $.post(saveLogoUrl, {
-            id: editController.homePageAssets.id,
-            logo: editController.logo
-        }, (response) => {
-            editController.showSpinner = false;
-        });
+        if (confirm('Are you sure you want to replace the logo?')) {
+            editController.showSpinner = true;
+            $.post(saveLogoUrl, {
+                id: editController.homePageAssets.id,
+                logo: editController.logo
+            }, (response) => {
+                editController.showSpinner = false;
+            });
+        }
     };
     
     editController.titleScreenshotChanged = function(event) {
@@ -45,33 +47,39 @@ setTimeout(() => {
     };
     
     editController.saveTitleScreenshot = function(event) {
-        editController.showSpinner = true;
-        $.post(saveTitleScreenshotUrl, {
-            id: editController.homePageAssets.id,
-            screenshot: editController.titleScreenshot
-        }, (response) => {
-            editController.showSpinner = false;
-        })
+        if (confirm('Are you sure you want to change the homepage screenshot?')) {
+            editController.showSpinner = true;
+            $.post(saveTitleScreenshotUrl, {
+                id: editController.homePageAssets.id,
+                screenshot: editController.titleScreenshot
+            }, (response) => {
+                editController.showSpinner = false;
+            });
+        }
     };
     
     editController.saveDescription = function() {
-        editController.showSpinner = true;
-        $.post(saveDescriptionUrl, {
-            id: editController.homePageAssets.id,
-            description: editController.description
-        }, (response) => {
-            editController.showSpinner = false;
-        });
+        if (confirm('Are you sure you want to change the homepage description?')) {
+            editController.showSpinner = true;
+            $.post(saveDescriptionUrl, {
+                id: editController.homePageAssets.id,
+                description: editController.description
+            }, (response) => {
+                editController.showSpinner = false;
+            });
+        }
     }
     
     editController.saveTrailer = function() {
-        editController.showSpinner = true;
-        $.post(saveTrailerUrl, {
-            id: editController.homePageAssets.id,
-            trailer_url: editController.trailerUrl
-        }, (response) => {
-            editController.showSpinner = false;
-        });
+        if (confirm('Are you sure you want to change the trailer url?')) {
+            editController.showSpinner = true;
+            $.post(saveTrailerUrl, {
+                id: editController.homePageAssets.id,
+                trailer_url: editController.trailerUrl
+            }, (response) => {
+                editController.showSpinner = false;
+            });
+        }
     };
 
     retrieveHomeData();
