@@ -19,10 +19,10 @@
 }
 
 .title-header {
-    font-family: 'Metal Mania', cursive;
+    font-family: 'Butcherman', cursive;
     color: rgb(238, 238, 238);
     text-align: center;
-    text-shadow: 10px 10px black;
+    text-shadow: 3px 3px #8D2CA0;;
 }
 
 .logo {
@@ -142,8 +142,8 @@
         height: 60vh;
     }
     .title-header {
-        font-size: 100px;
-        text-shadow: 3px 3px black;
+        font-size: 80px;
+        text-shadow: 3px 3px #8D2CA0;
     }
 
     .logo {
@@ -161,8 +161,8 @@
     }
     
     .title-header {
-        font-size: 80px;
-        text-shadow: 3px 3px black;
+        font-size: 60px;
+        text-shadow: 3px 3px #8D2CA0;
     }
 
     .logo {

@@ -3,18 +3,18 @@
 }
 
 .navbar-brand {
-    color: rgb(238, 238, 238);
-    font-family: 'Metal Mania', cursive;
+    text-shadow: 1px 1px rgb(95, 201, 37);
+    font-family: 'Butcherman', cursive;
     font-size: 35px;
 }
 
 .nav-link {
-    font-family: 'Averia Serif Libre', cursive;
     font-size: 20px;
+    font-family: 'Exo 2', sans-serif;
 }
 
 .navbar-brand:hover, .nav-link:hover {
-    background: -webkit-linear-gradient(#eee, #333);
+    background: rgb(225, 76, 255);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
@@ -41,7 +41,7 @@
 }
 
 .company-name {
-    font-family: 'Averia Serif Libre', cursive;
+    font-family: 'Exo 2', sans-serif;
 }
 
 @media only screen and (min-width: 450px) {

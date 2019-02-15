@@ -1,12 +1,12 @@
 db.define_table('home_page_assets',
     Field('logo', 'text'),
-    Field('screenshot', 'text', requires=IS_LENGTH(1200000)),
+    Field('screenshot', 'text', requires=IS_LENGTH(12000000)),
     Field('trailer_url'),
     Field('description', 'text')
 )
 
 db.define_table('home_page_media', 
-    Field('img_src', 'text', requires=IS_LENGTH(1200000)),
+    Field('img_src', 'text', requires=IS_LENGTH(12000000)),
     Field('caption')
 )
 

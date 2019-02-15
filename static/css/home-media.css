@@ -22,8 +22,9 @@
 }
 
 .media-header {
-    font-family: 'Metal Mania', cursive;
+    font-family: 'Butcherman', cursive;
     color: rgb(238, 238, 238);
+    text-shadow: 3px 3px #8D2CA0;
     text-align: center;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .carousel-caption {
-    font-family: 'Averia Serif Libre', cursive;
+    font-family: 'Exo 2', sans-serif;
     font-size: 20px;
 }
 
@@ -159,6 +160,7 @@
 
     .media-header {
         font-size: 55px;
+        text-shadow: 1px 1px #8D2CA0;
     }
 
     .carousel {
@@ -177,6 +179,7 @@
 
     .media-header {
         font-size: 40px;
+        text-shadow: 1px 1px #8D2CA0;
     }
 
     .carousel {
@@ -195,6 +198,7 @@
 
     .media-header {
         font-size: 40px;
+        text-shadow: 1px 1px #8D2CA0;
     }
 
     .carousel {
