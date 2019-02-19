@@ -192,3 +192,18 @@ CREATE TABLE `playtests`(
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB CHARACTER SET utf8;
 success!
+timestamp: 2019-02-18T22:51:44.640000
+CREATE TABLE `team_members`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `name` VARCHAR(512),
+    `title` VARCHAR(512),
+    `image` LONGTEXT,
+    `bio` LONGTEXT,
+    `linkedin` VARCHAR(512),
+    `portfolio` VARCHAR(512),
+    `itchio` VARCHAR(512),
+    `soundcloud` VARCHAR(512),
+    `github` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!

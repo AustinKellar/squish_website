@@ -1,7 +1,14 @@
-var processInfo = function() {
-    var i = 0;
+var processPlaytests = function() {
+    let i = 0;
     app.playtests.map((playtest) => {
         playtest.index = i++;
+    });
+};
+
+var processTeamMembers = function() {
+    let i = 0;
+    app.teamMembers.map((member) => {
+        member.index = i++;
     });
 };
 
@@ -15,7 +22,12 @@ var onPageLoad = function() {
         $('#app-content').show();
         $('#spinner').hide();
         window.scrollTo(0, 0);
-        processInfo();
+        processPlaytests();
+    });
+
+    $.getJSON(getTeamMembersUrl, (response) => {
+        app.teamMembers = response.team_members;
+        processTeamMembers();
     });
 };
 
@@ -49,7 +61,8 @@ var app = new Vue({
     data: {
         route: 'home',
         loaded: false,
-        playtests: []
+        playtests: [],
+        teamMembers: []
     },
     methods: {
         setRoute: setRoute,

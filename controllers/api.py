@@ -120,3 +120,7 @@ def update_playtest():
     )
 
     return "success"
+
+def get_team_members():
+    team_members = db(db.team_members).select()
+    return response.json(dict(team_members=team_members))

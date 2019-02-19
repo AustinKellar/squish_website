@@ -1,0 +1,112 @@
+.team-title-container {
+    background-color: rgb(42, 42, 42);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 5vw)
+    );
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-header {
+    font-family: 'Butcherman', cursive;
+    color: rgb(238, 238, 238);
+    text-align: center;
+    text-shadow: 3px 3px #8D2CA0;
+    font-size: 105px;
+}
+
+.member-container {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-content {
+    display: inline-flex;
+    border-radius: 20px;
+    flex-direction: row;
+}
+
+.member-image {
+    width: 187.5px;
+    height: 281px;
+}
+
+.member-info {
+    color: rgb(238, 238, 238);
+    font-family: 'Exo 2', sans-serif;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.member-name-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.member-name {
+    font-size: 25px;
+}
+
+.member-title {
+    font-size: 18px;
+    font-style: italic; 
+    transform: translateY(25%);
+}
+
+.member-links {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding-right: 20px;
+}
+
+.member-link {
+    margin-left: 20px;
+}
+
+.link-icon {
+    color: rgb(238, 238, 238);
+    font-size: 17px;
+}
+
+.link-icon:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(238, 238, 238);
+}
+
+.dark-gray {
+    background-color: rgb(42, 42, 42);
+
+}
+
+.light-gray {
+    background-color: rgb(62, 62, 62);
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.img-rounded-left {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.img-rounded-right {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
