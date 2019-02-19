@@ -1,3 +1,4 @@
+import random
 
 # home page assets
 @auth.requires_signature()
@@ -122,5 +123,49 @@ def update_playtest():
     return "success"
 
 def get_team_members():
-    team_members = db(db.team_members).select()
+    db_team_members = db(db.team_members).select()
+
+    team_members = []
+    for member in db_team_members:
+        team_members.append(member)
+        
+    random.shuffle(team_members)
+
     return response.json(dict(team_members=team_members))
+
+@auth.requires_signature()
+def save_team_member():
+    id = db.team_members.insert(
+        name = request.vars.name,
+        title = request.vars.title,
+        image = request.vars.image,
+        bio = request.vars.bio,
+        portfolio = request.vars.portfolio,
+        github = request.vars.github,
+        soundcloud = request.vars.soundcloud,
+        itchio = request.vars.itchio,
+        linkedin = request.vars.linkedin
+    )
+    
+    return response.json(dict(id=id))
+
+@auth.requires_signature()
+def update_team_member():
+    db(db.team_members.id == request.vars.id).update(
+        name = request.vars.name,
+        title = request.vars.title,
+        image = request.vars.image,
+        bio = request.vars.bio,
+        portfolio = request.vars.portfolio,
+        github = request.vars.github,
+        soundcloud = request.vars.soundcloud,
+        itchio = request.vars.itchio,
+        linkedin = request.vars.linkedin
+    )
+
+    return "success"
+
+@auth.requires_signature()
+def delete_team_member():
+    db(db.team_members.id == request.vars.id).delete()
+    return "success"

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{=URL('static','css/team.css')}}"/>
+<link rel="stylesheet" href="{{=URL('static','css/team.css')}}" />
 
 <script>
     var getTeamMembersUrl = "{{=URL('api', 'get_team_members')}}";
@@ -9,9 +9,9 @@
         <h1 class="team-header">Meet the Team</h1>
     </div>
     <div v-for="member in teamMembers">
-        <div class="member-container transparent">
+        <div v-if="member.index == 0" class="member-container transparent">
             <div class="member-content dark-gray">
-                <img class="img-rounded-left member-image" v-bind:src="member.image"/>
+                <img class="img-rounded-left member-image" v-bind:src="member.image" />
                 <div class="member-info">
                     <div class="member-name-row">
                         <h3 class="member-name">${ member.name }</h3>
@@ -21,13 +21,92 @@
                         ${ member.bio }
                     </div>
                     <div class="member-links">
-                        <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i class="fa fa-briefcase link-icon"></i></a>
-                        <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i class="fa fa-linkedin link-icon"></i></a>
-                        <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i class="fa fa-github link-icon"></i></a>
-                        <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i class="fa fa-soundcloud link-icon"></i></a>
-                        <a v-if="member.github" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                        <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
+                                class="fa fa-briefcase link-icon"></i></a>
+                        <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
+                                class="fa fa-linkedin link-icon"></i></a>
+                        <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
+                                class="fa fa-github link-icon"></i></a>
+                        <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
+                                class="fa fa-soundcloud link-icon"></i></a>
+                        <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div v-if="member.index != 0 && member.index %2 == 0" class="member-container transparent">
+                <div class="member-content dark-gray">
+                    <img class="img-rounded-left member-image" v-bind:src="member.image" />
+                    <div class="member-info">
+                        <div class="member-name-row">
+                            <h3 class="member-name">${ member.name }</h3>
+                            <h3 class="member-title">${ member.title }</h3>
+                        </div>
+                        <div class="member-bio">
+                            ${ member.bio }
+                        </div>
+                        <div class="member-links">
+                            <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
+                                    class="fa fa-briefcase link-icon"></i></a>
+                            <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
+                                    class="fa fa-linkedin link-icon"></i></a>
+                            <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
+                                    class="fa fa-github link-icon"></i></a>
+                            <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
+                                    class="fa fa-soundcloud link-icon"></i></a>
+                            <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div v-if="member.index != 0 && member.index %2 != 0 && member.index != teamMembers.length-1" class="member-container dark-gray team-slant-both-towards-left bigger">
+            <div class="member-content light-gray">
+                <div class="member-info">
+                    <div class="member-name-row">
+                        <h3 class="member-name">${ member.name }</h3>
+                        <h3 class="member-title">${ member.title }</h3>
+                    </div>
+                    <div class="member-bio">
+                        ${ member.bio }
+                    </div>
+                    <div class="member-links">
+                        <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
+                                class="fa fa-briefcase link-icon"></i></a>
+                        <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
+                                class="fa fa-linkedin link-icon"></i></a>
+                        <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
+                                class="fa fa-github link-icon"></i></a>
+                        <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
+                                class="fa fa-soundcloud link-icon"></i></a>
+                        <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                    </div>
+                </div>
+                <img class="img-rounded-right member-image" v-bind:src="member.image" />
+            </div>
+        </div>
+        <div v-if="member.index != 0 && member.index %2 != 0 && member.index == teamMembers.length-1" class="member-container dark-gray team-slant-top-towards-left bigger">
+            <div class="member-content light-gray">
+                <div class="member-info">
+                    <div class="member-name-row">
+                        <h3 class="member-name">${ member.name }</h3>
+                        <h3 class="member-title">${ member.title }</h3>
+                    </div>
+                    <div class="member-bio">
+                        ${ member.bio }
+                    </div>
+                    <div class="member-links">
+                        <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
+                                class="fa fa-briefcase link-icon"></i></a>
+                        <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
+                                class="fa fa-linkedin link-icon"></i></a>
+                        <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
+                                class="fa fa-github link-icon"></i></a>
+                        <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
+                                class="fa fa-soundcloud link-icon"></i></a>
+                        <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                    </div>
+                </div>
+                <img class="img-rounded-right member-image" v-bind:src="member.image" />
             </div>
         </div>
     </div>

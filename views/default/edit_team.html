@@ -1,0 +1,58 @@
+<div v-if="route == 'team'">
+    <div v-for="member in teamMembers">
+        ${ member.name }<br>
+        <img v-bind:src="member.image" width="50" /><br>
+        <button v-on:click="updatedMember = member; changeRoute('updateTeamMember');">Edit</button>
+        <button v-on:click="deleteTeamMember(member.index)">Delete</button>
+        <br><br>
+    </div>
+
+    <br><br>
+    <h2>Add Team Member</h2>
+    <label>Name</label><br>
+    <input v-model="memberName" /><br><br>
+    <label>Image</label><br>
+    <img v-bind:src="memberImage" width="50" /><br>
+    <input type="file" v-on:change="teamMemberImageChanged"><br><br>
+    <label>Title</label><br>
+    <input v-model="memberTitle" /><br><br>
+    <label>Bio (500 character max!)</label><br>
+    <textarea maxlength="500" v-model="memberBio"></textarea><br><br>
+    <label>Portfolio Url</label><br>
+    <input v-model="memberPortfolio" /><br><br>
+    <label>GitHub Url</label><br>
+    <input v-model="memberGithub" /><br><br>
+    <label>SoundCloud Url</label><br>
+    <input v-model="memberSoundcloud" /><br><br>
+    <label>Itch.io Url</label><br>
+    <input v-model="memberItchio" /><br>
+    <label>LinkedIn Url</label><br>
+    <input v-model="memberLinkedin" /><br><br>
+    <button v-on:click="saveTeamMember">Save Team Member</button>
+</div>
+
+<div v-if="route == 'updateTeamMember'">
+    <h2>Edit Team Member</h2>
+    <label>Name</label><br>
+    <input v-model="updatedMember.name" /><br><br>
+    <label>Image</label><br>
+    <img v-bind:src="updatedMember.image" width="50" /><br>
+    <input type="file" v-on:change="updatedTeamMemberImageChanged"><br><br>
+    <label>Title</label><br>
+    <input v-model="updatedMember.title" /><br><br>
+    <label>Bio (500 character max!)</label><br>
+    <textarea maxlength="500" v-model="updatedMember.bio"></textarea><br><br>
+    <label>Portfolio Url</label><br>
+    <input v-model="updatedMember.portfolio" /><br><br>
+    <label>GitHub Url</label><br>
+    <input v-model="updatedMember.github" /><br><br>
+    <label>SoundCloud Url</label><br>
+    <input v-model="updatedMember.soundcloud" /><br><br>
+    <label>Itch.io Url</label><br>
+    <input v-model="updatedMember.itchio" /><br>
+    <label>LinkedIn Url</label><br>
+    <input v-model="updatedMember.linkedin" /><br><br>
+    <button v-on:click="updateTeamMember">Update Team Member</button>
+</div>
+
+<script src="{{=URL('static','js/edit_team.js')}}"></script>

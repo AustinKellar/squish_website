@@ -30,6 +30,19 @@ var editController = new Vue({
         playtestDescription: undefined,
         updatedPlaytest: undefined,
 
+        // team
+        teamMembers: [],
+        memberName: undefined,
+        memberTitle: undefined,
+        memberImage: undefined,
+        memberBio: undefined,
+        memberPortfolio: undefined,
+        memberGithub: undefined,
+        memberSoundcloud: undefined,
+        memberItchio: undefined,
+        memberLinkedin: undefined,
+        updatedMember: undefined,
+
         // general
         route: 'home',
         showSpinner: true
@@ -56,6 +69,13 @@ var editController = new Vue({
         playtestChanged: undefined,
         updatePlaytest: undefined,
         updatedPlaytestChanged: undefined,
+
+        // team
+        saveTeamMember: undefined,
+        updateTeamMember: undefined,
+        deleteTeamMember: undefined,
+        teamMemberImageChanged: undefined,
+        updatedTeamMemberImageChanged: undefined,
 
         // general
         changeRoute: changeRoute

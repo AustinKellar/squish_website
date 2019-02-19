@@ -1,4 +1,5 @@
 .team-title-container {
+    background-image: url("../images/team.jpg");
     background-color: rgb(42, 42, 42);
     background-size: cover;
     background-position: center;
@@ -6,7 +7,7 @@
         0 0,
         100% 0,
         100% 100%,
-        0 calc(100% - 5vw)
+        0 calc(100% - 3vw)
     );
     height: 80vh;
     display: flex;
@@ -18,8 +19,9 @@
     font-family: 'Butcherman', cursive;
     color: rgb(238, 238, 238);
     text-align: center;
-    text-shadow: 3px 3px #8D2CA0;
+    text-shadow: 5px 5px black;
     font-size: 105px;
+    display: none;
 }
 
 .member-container {
@@ -66,6 +68,10 @@
     transform: translateY(25%);
 }
 
+.member-bio {
+    font-size: 15px;
+}
+
 .member-links {
     display: flex;
     justify-content: flex-end;
@@ -86,6 +92,37 @@
     cursor: pointer;
     text-decoration: none;
     color: rgb(238, 238, 238);
+}
+
+.team-slant-bottom-towards-right {
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 3vw)
+    );
+}
+
+.team-slant-both-towards-left {
+    clip-path: polygon(
+        0 calc(0% + 3vw),
+        100% 0,
+        100% 100%,
+        0 calc(100% - 3vw)
+    );
+}
+
+.team-slant-top-towards-left {
+    clip-path: polygon(
+        0 calc(0% + 3vw),
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.bigger {
+    height: 85vh;
 }
 
 .dark-gray {
@@ -109,4 +146,319 @@
 .img-rounded-right {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+@media only screen and (min-width: 1250px) {
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px) {
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
+    
+}
+
+@media only screen and (min-width: 700px) and (max-width: 999px) and (min-height: 1020px) {
+    .team-header {
+        font-size: 85px;
+    }
+
+    .member-info {
+        width: 500px;
+    }
+
+    .member-name {
+        font-size: 18px;
+    }
+    
+    .member-title {
+        font-size: 14px;
+    }
+    
+    .member-bio {
+        font-size: 12px;
+    }
+
+    .member-image {
+        width: 150px;
+        height: 224.8px;
+    }
+
+    .member-container {
+        height: 500px;
+    }
+
+    .bigger {
+        height: 550px;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 999px) and (max-height: 1019px) {
+    .team-header {
+        font-size: 85px;
+    }
+
+    .member-info {
+        width: 500px;
+    }
+
+    .member-name {
+        font-size: 18px;
+    }
+    
+    .member-title {
+        font-size: 14px;
+    }
+    
+    .member-bio {
+        font-size: 12px;
+    }
+
+    .member-image {
+        width: 150px;
+        height: 224.8px;
+    }
+
+    .member-link {
+        margin-left: 12px;
+    }
+
+    .bigger {
+        height: 75vh;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 699px) {
+    .team-header {
+        font-size: 55px;
+    }
+
+    .member-info {
+        width: 400px;
+    }
+
+    .member-name {
+        font-size: 15px;
+    }
+    
+    .member-title {
+        font-size: 10px;
+    }
+    
+    .member-bio {
+        font-size: 10px;
+    }
+
+    .member-image {
+        width: 150px;
+        height: 224.8px;
+    }
+
+    .member-link {
+        margin-left: 12px;
+    }
+
+    .member-container {
+        height: 45vh;
+    }
+
+    .bigger {
+        height: 55vh;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 599px) {
+    .team-title-container {
+        height: 75vh;
+    }
+
+    .team-header {
+        font-size: 45px;
+    }
+
+    .member-content {
+        border-radius: 10px;
+    }
+
+    .img-rounded-left {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .img-rounded-right {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .member-info {
+        width: 300px;
+        padding: 5px 10px;
+    }
+
+    .member-name {
+        font-size: 12px;
+    }
+    
+    .member-title {
+        font-size: 8px;
+    }
+    
+    .member-bio {
+        font-size: 8px;
+    }
+
+    .member-image {
+        width: 105px;
+        height: 157.22px;
+    }
+
+    .member-links {
+        padding-right: 10px;
+    }
+
+    .member-link {
+        margin-left: 12px;
+    }
+
+    .member-container {
+        height: 35vh;
+    }
+
+    .bigger {
+        height: 45vh;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .team-title-container {
+        height: 65vh;
+    }
+
+    .team-header {
+        font-size: 45px;
+    }
+
+    .member-content {
+        border-radius: 10px;
+    }
+
+    .img-rounded-left {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .img-rounded-right {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .member-info {
+        width: 220px;
+        padding: 5px 10px;
+    }
+
+    .member-name {
+        font-size: 10px;
+    }
+    
+    .member-title {
+        font-size: 6px;
+    }
+    
+    .member-bio {
+        font-size: 6px;
+    }
+
+    .member-image {
+        width: 84px;
+        height: 125.776px;
+    }
+
+    .member-links {
+        padding-right: 10px;
+    }
+
+    .member-link {
+        margin-left: 12px;
+    }
+
+    .link-icon {
+        font-size: 10px;
+    }
+
+    .member-container {
+        height: 250px;
+    }
+
+    .bigger {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    .team-title-container {
+        height: 65vh;
+    }
+
+    .team-header {
+        font-size: 35px;
+    }
+
+    .member-content {
+        border-radius: 10px;
+    }
+
+    .img-rounded-left {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    .img-rounded-right {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .member-info {
+        width: 200px;
+        padding: 5px 10px;
+    }
+
+    .member-name {
+        font-size: 10px;
+    }
+    
+    .member-title {
+        font-size: 6px;
+    }
+    
+    .member-bio {
+        font-size: 6px;
+    }
+
+    .member-image {
+        width: 84px;
+        height: 125.776px;
+    }
+
+    .member-links {
+        padding-right: 10px;
+    }
+
+    .member-link {
+        margin-left: 12px;
+    }
+
+    .link-icon {
+        font-size: 10px;
+    }
+
+    .member-container {
+        height: 250px;
+    }
+
+    .bigger {
+        height: 300px;
+    }
 }

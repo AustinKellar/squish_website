@@ -16,6 +16,11 @@
     var savePlaytestUrl = "{{=URL('api', 'save_playtest', user_signature=True)}}";
     var deletePlaytestUrl = "{{=URL('api', 'delete_playtest', user_signature=True)}}";
     var updatePlaytestUrl = "{{=URL('api', 'update_playtest', user_signature=True)}}";
+
+    var getTeamMembersUrl = "{{=URL('api', 'get_team_members', user_signature=True)}}";
+    var saveTeamMemberUrl = "{{=URL('api', 'save_team_member', user_signature=True)}}";
+    var updateTeamMemberUrl = "{{=URL('api', 'update_team_member', user_signature=True)}}";
+    var deleteTeamMemberUrl = "{{=URL('api', 'delete_team_member', user_signature=True)}}";
 </script>
 
 <div id="edit">
@@ -25,6 +30,7 @@
     <button v-on:click="changeRoute('home')"> Primary Home Page Assets</button>
     <button v-on:click="changeRoute('media')">Media</button>
     <button v-on:click="changeRoute('playtests')">Playtests</button>
+    <button v-on:click="changeRoute('team')">Meet the Team</button>
 
     <div v-if="showSpinner" style="height: 60vh; width: 100%; display: flex; justify-content: center; align-items: center; color: black; font-size: 80px;">
         <i class="fa fa-spinner fa-spin spinner"></i>
@@ -41,6 +47,10 @@
 
     <div v-if="(route == 'playtests' || route == 'updatePlaytest') && !showSpinner">
         {{ include 'default/edit_playtests.html' }}
+    </div>
+
+    <div v-if="(route == 'team' || route == 'updateTeamMember')">
+        {{ include 'default/edit_team.html' }}
     </div>
 
 </div>

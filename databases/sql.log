@@ -207,3 +207,17 @@ CREATE TABLE `team_members`(
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB CHARACTER SET utf8;
 success!
+timestamp: 2019-02-19T02:38:59.248000
+CREATE TABLE "team_members"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(512),
+    "title" CHAR(512),
+    "image" TEXT,
+    "bio" TEXT,
+    "linkedin" CHAR(512),
+    "portfolio" CHAR(512),
+    "itchio" CHAR(512),
+    "soundcloud" CHAR(512),
+    "github" CHAR(512)
+);
+success!

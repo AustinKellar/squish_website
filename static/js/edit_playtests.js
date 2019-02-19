@@ -84,6 +84,7 @@ setTimeout(() => {
             }, (response) => {
                 processPlaytests();
                 editController.showSpinner = false;
+                window.location.href = window.location.href;
             });
         }
     };
