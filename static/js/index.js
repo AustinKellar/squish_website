@@ -1,18 +1,20 @@
-var processPlaytests = function() {
+var processPlaytests = function () {
     let i = 0;
     app.playtests.map((playtest) => {
         playtest.index = i++;
     });
 };
 
-var processTeamMembers = function() {
+var processTeamMembers = function () {
     let i = 0;
     app.teamMembers.map((member) => {
         member.index = i++;
+        Vue.set(member, 'displayText', member.bio);
+        Vue.set(member, 'funnyBio', member.funny_bio);
     });
 };
 
-var onPageLoad = function() {
+var onPageLoad = function () {
     if (window.location.pathname.toUpperCase() == '/SQUISH/DEFAULT/INDEX') {
         window.location.pathname = '/Squish';
     }
@@ -31,7 +33,20 @@ var onPageLoad = function() {
     });
 };
 
-var setRoute = function(route) {
+var startDownloadCountdown = function () {
+    app.downloadCountdown = 4;
+    var interval = setInterval(() => {
+        app.downloadCountdown--;
+        if (app.downloadCountdown == 0) {
+            if (app.route == 'download') {
+                window.location.href = "https://themightyspidey.itch.io/squish-alpha-build";
+            }
+            clearInterval(interval);
+        }
+    }, 1000);
+};
+
+var setRoute = function (route) {
     app.route = route;
 
     if (route != 'home') {
@@ -40,7 +55,7 @@ var setRoute = function(route) {
     }
 };
 
-var showSpinner = function(time) {
+var showSpinner = function (time) {
     $('#app-content').hide();
     $('#spinner').show();
     setTimeout(() => {
@@ -49,9 +64,18 @@ var showSpinner = function(time) {
     }, time);
 };
 
-var openImage = function(url) {
+var openImage = function (url) {
     var win = window.open();
-    win.document.write('<iframe src="' + url  + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
+    win.document.write('<iframe src="' + url + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
+};
+
+var toggleDisplayText = function (index) {
+    var teamMember = app.teamMembers[index];
+    if (teamMember.displayText == teamMember.funnyBio) {
+        app.teamMembers[index].displayText = teamMember.bio;
+    } else {
+        app.teamMembers[index].displayText = teamMember.funnyBio;
+    }
 };
 
 var app = new Vue({
@@ -62,12 +86,15 @@ var app = new Vue({
         route: 'home',
         loaded: false,
         playtests: [],
-        teamMembers: []
+        teamMembers: [],
+        downloadCountdown: 4
     },
     methods: {
         setRoute: setRoute,
         openImage: openImage,
-        showSpinner: showSpinner
+        showSpinner: showSpinner,
+        startDownloadCountdown: startDownloadCountdown,
+        toggleDisplayText: toggleDisplayText
     }
 });
 

@@ -36,6 +36,7 @@ var editController = new Vue({
         memberTitle: undefined,
         memberImage: undefined,
         memberBio: undefined,
+        memberFunnyBio: undefined,
         memberPortfolio: undefined,
         memberGithub: undefined,
         memberSoundcloud: undefined,

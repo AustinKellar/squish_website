@@ -221,3 +221,6 @@ CREATE TABLE "team_members"(
     "github" CHAR(512)
 );
 success!
+timestamp: 2019-03-01T06:11:15.628000
+ALTER TABLE "team_members" ADD "funny_bio" TEXT;
+success!

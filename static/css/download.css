@@ -1,0 +1,89 @@
+.download-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.download-message {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3.5vw;
+    color: rgb(238, 238, 238);
+    transform: translateY(-10%);
+}
+
+.download-countdown {
+    font-family: 'Butcherman', cursive;
+    font-size: 10.5vw;
+    color: rgb(238, 238, 238);
+    text-shadow: 3px 3px #8D2CA0;
+    transform: translateY(-10%);
+    margin-top: 10px;
+}
+
+@media only screen and (min-width: 1250px) {
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (min-height: 1360px)  {
+    .download-message {
+        font-size: 6.5vw
+    }
+
+    .download-countdown {
+        font-size: 22.5vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1249px) and (max-height: 1359px) {
+
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (min-height: 1020px) {
+    .download-message {
+        font-size: 6.5vw
+    }
+
+    .download-countdown {
+        font-size: 22.5vw;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 999px) and (max-height: 1019px) {
+
+}
+
+@media only screen and (min-width: 550px) and (max-width: 649px) {
+
+}
+
+@media only screen and (min-width: 450px) and (max-width: 549px) {
+    .download-message {
+        font-size: 8.5vw
+    }
+
+    .download-countdown {
+        font-size: 25.5vw;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .download-message {
+        font-size: 8.5vw
+    }
+
+    .download-countdown {
+        font-size: 25.5vw;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    .download-message {
+        font-size: 8.5vw
+    }
+
+    .download-countdown {
+        font-size: 25.5vw;
+    }
+}

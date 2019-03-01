@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{=URL('static','css/nav.css')}}"/>
+<link rel="stylesheet" href="{{=URL('static','css/nav.css')}}" />
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="navbar-brand" v-on:click="setRoute('home')">SQUISH</div>
@@ -10,10 +10,13 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <div class="nav-link" v-on:click="setRoute('play'); showSpinner(500);">Play</div>
+                <div class="nav-link" v-on:click="setRoute('download'); showSpinner(250); startDownloadCountdown();">Download</div>
             </li>
             <li class="nav-item">
-                <div class="nav-link" v-on:click="setRoute('meet_the_team')">Meet the Team</div>
+                <div class="nav-link" v-on:click="setRoute('play'); showSpinner(500);">Playtest</div>
+            </li>
+            <li class="nav-item">
+                <div class="nav-link" v-on:click="setRoute('meet_the_team'); showSpinner(500);">Meet the Team</div>
             </li>
         </ul>
     </div>

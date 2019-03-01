@@ -18,6 +18,8 @@
     <input v-model="memberTitle" /><br><br>
     <label>Bio (500 character max!)</label><br>
     <textarea maxlength="500" v-model="memberBio"></textarea><br><br>
+    <label>Funny Bio (Optional)</label><br>
+    <textarea maxlength="500" v-model="memberFunnyBio"></textarea><br><br>
     <label>Portfolio Url</label><br>
     <input v-model="memberPortfolio" /><br><br>
     <label>GitHub Url</label><br>
@@ -42,6 +44,8 @@
     <input v-model="updatedMember.title" /><br><br>
     <label>Bio (500 character max!)</label><br>
     <textarea maxlength="500" v-model="updatedMember.bio"></textarea><br><br>
+    <label>Funny Bio (Optional)</label><br>
+    <textarea maxlength="500" v-model="updatedMember.funny_bio"></textarea><br><br>
     <label>Portfolio Url</label><br>
     <input v-model="updatedMember.portfolio" /><br><br>
     <label>GitHub Url</label><br>

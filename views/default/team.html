@@ -18,18 +18,19 @@
                         <h3 class="member-title">${ member.title }</h3>
                     </div>
                     <div class="member-bio">
-                        ${ member.bio }
+                        ${ member.displayText }
                     </div>
                     <div class="member-links">
+                        <div v-if="member.funnyBio" v-on:mouseenter="toggleDisplayText(member.index)" v-on:mouseleave="toggleDisplayText(member.index)" class="member-link"><i class="fa fa-comment link-icon green"></i></div>
                         <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
-                                class="fa fa-briefcase link-icon"></i></a>
+                                class="fa fa-briefcase link-icon green"></i></a>
                         <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
-                                class="fa fa-linkedin link-icon"></i></a>
+                                class="fa fa-linkedin link-icon green"></i></a>
                         <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
-                                class="fa fa-github link-icon"></i></a>
+                                class="fa fa-github link-icon green"></i></a>
                         <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
-                                class="fa fa-soundcloud link-icon"></i></a>
-                        <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                                class="fa fa-soundcloud link-icon green"></i></a>
+                        <a v-if="member.itchio" class="member-link link-icon green itch-icon" target="_blank" v-bind:href="member.itchio">itch</a>
                     </div>
                 </div>
             </div>
@@ -43,18 +44,19 @@
                             <h3 class="member-title">${ member.title }</h3>
                         </div>
                         <div class="member-bio">
-                            ${ member.bio }
+                            ${ member.displayText }
                         </div>
                         <div class="member-links">
+                            <div v-if="member.funnyBio" v-on:mouseenter="toggleDisplayText(member.index)" v-on:mouseleave="toggleDisplayText(member.index)" class="member-link"><i class="fa fa-comment link-icon green"></i></div>
                             <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
-                                    class="fa fa-briefcase link-icon"></i></a>
+                                    class="fa fa-briefcase link-icon green"></i></a>
                             <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
-                                    class="fa fa-linkedin link-icon"></i></a>
+                                    class="fa fa-linkedin link-icon green"></i></a>
                             <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
-                                    class="fa fa-github link-icon"></i></a>
+                                    class="fa fa-github link-icon green"></i></a>
                             <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
-                                    class="fa fa-soundcloud link-icon"></i></a>
-                            <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                                    class="fa fa-soundcloud link-icon green"></i></a>
+                            <a v-if="member.itchio" class="member-link link-icon green itch-icon" target="_blank" v-bind:href="member.itchio">itch</a>
                         </div>
                     </div>
                 </div>
@@ -67,18 +69,19 @@
                         <h3 class="member-title">${ member.title }</h3>
                     </div>
                     <div class="member-bio">
-                        ${ member.bio }
+                        ${ member.displayText }
                     </div>
                     <div class="member-links">
+                        <div v-if="member.funnyBio" v-on:mouseenter="toggleDisplayText(member.index)" v-on:mouseleave="toggleDisplayText(member.index)" class="member-link"><i class="fa fa-comment link-icon purple"></i></div>
                         <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
-                                class="fa fa-briefcase link-icon"></i></a>
+                                class="fa fa-briefcase link-icon purple"></i></a>
                         <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
-                                class="fa fa-linkedin link-icon"></i></a>
+                                class="fa fa-linkedin link-icon purple"></i></a>
                         <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
-                                class="fa fa-github link-icon"></i></a>
+                                class="fa fa-github link-icon purple"></i></a>
                         <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
-                                class="fa fa-soundcloud link-icon"></i></a>
-                        <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                                class="fa fa-soundcloud link-icon purple"></i></a>
+                        <a v-if="member.itchio" class="member-link link-icon purple itch-icon" target="_blank" v-bind:href="member.itchio">itch</a>
                     </div>
                 </div>
                 <img class="img-rounded-right member-image" v-bind:src="member.image" />
@@ -92,18 +95,19 @@
                         <h3 class="member-title">${ member.title }</h3>
                     </div>
                     <div class="member-bio">
-                        ${ member.bio }
+                        ${ member.displayText }
                     </div>
                     <div class="member-links">
+                        <div v-if="member.funnyBio" v-on:mouseenter="toggleDisplayText(member.index)" v-on:mouseleave="toggleDisplayText(member.index)" class="member-link"><i class="fa fa-comment link-icon purple"></i></div>
                         <a v-if="member.portfolio" class="member-link" target="_blank" v-bind:href="member.portfolio"><i
-                                class="fa fa-briefcase link-icon"></i></a>
+                                class="fa fa-briefcase link-icon purple"></i></a>
                         <a v-if="member.linkedin" class="member-link" target="_blank" v-bind:href="member.linkedin"><i
-                                class="fa fa-linkedin link-icon"></i></a>
+                                class="fa fa-linkedin link-icon purple"></i></a>
                         <a v-if="member.github" class="member-link" target="_blank" v-bind:href="member.github"><i
-                                class="fa fa-github link-icon"></i></a>
+                                class="fa fa-github link-icon purple"></i></a>
                         <a v-if="member.soundcloud" class="member-link" target="_blank" v-bind:href="member.soundcloud"><i
-                                class="fa fa-soundcloud link-icon"></i></a>
-                        <a v-if="member.itchio" class="member-link link-icon" target="_blank" v-bind:href="member.itchio">itch</a>
+                                class="fa fa-soundcloud link-icon purple"></i></a>
+                        <a v-if="member.itchio" class="member-link link-icon purple itch-icon" target="_blank" v-bind:href="member.itchio">itch</a>
                     </div>
                 </div>
                 <img class="img-rounded-right member-image" v-bind:src="member.image" />

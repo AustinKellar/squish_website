@@ -5,10 +5,10 @@
 }
 
 .about-content {
-    padding: 50px 20vw;
+    padding: 100px 20vh;
     font-family: 'Exo 2', sans-serif;
     color: rgb(238, 238, 238);
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .about-header {
@@ -19,9 +19,6 @@
     margin-bottom: 20px;
 }
 
-.about-description {
-    text-indent: 3.5vw;
-}
 
 @media only screen and (min-width: 1250px) {
     .about-header {

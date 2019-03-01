@@ -25,7 +25,7 @@
 }
 
 .member-container {
-    height: 65vh;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +35,10 @@
     display: inline-flex;
     border-radius: 20px;
     flex-direction: row;
+}
+
+.member-content:hover {
+    cursor: pointer;
 }
 
 .member-image {
@@ -91,7 +95,15 @@
 .link-icon:hover {
     cursor: pointer;
     text-decoration: none;
-    color: rgb(238, 238, 238);
+    color: rgb(95, 201, 37);
+}
+
+.green:hover {
+    color: rgb(95, 201, 37);
+}
+
+.purple:hover {
+    color: rgb(225, 76, 255);
 }
 
 .team-slant-bottom-towards-right {
@@ -122,7 +134,7 @@
 }
 
 .bigger {
-    height: 85vh;
+    height: 550px;
 }
 
 .dark-gray {
@@ -395,6 +407,10 @@
     .bigger {
         height: 300px;
     }
+
+    .itch-icon {
+        transform: translateY(33%);
+    }
 }
 
 @media only screen and (max-width: 349px) {
@@ -460,5 +476,9 @@
 
     .bigger {
         height: 300px;
+    }
+
+    .itch-icon {
+        transform: translateY(33%);
     }
 }
